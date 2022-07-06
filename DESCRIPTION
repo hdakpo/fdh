@@ -1,11 +1,34 @@
 Package: fdh
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Benchmarking using Nonconvex Free Disposal Hull Models
+Version: 0.1.0.900
+Authors@R: 
+    c(
+   person("K Hervé", "Dakpo", email = "k-herve.dakpo@inrae.fr", role = c("aut", "cre")),
+   person("Frederic", "Ang", role = "aut"),
+   person("Kristiaan", "Kerstens", role = "aut"))
+Description: Enumeration algorithms for measuring performance assuming nonconvex
+    production technologies. Estimation of Farrell input, output, and
+    graph distance functions under different returns to scale assumptions 
+    ('vrs' for variable returns to scale, 'crs' for constant returns to scale, 
+    'nirs' for nonincreasing returns to scale, and 'ndrs' for nondecreasing
+    returns to scale). The package also provides computation of minimum cost, 
+    and maximum revenue. The overall efficiency associated to the minimum 
+    cost or the maximum revenue is also decomposed into several efficiency 
+    components.
+BugReports: https://github.com/hdakpo/fdh/issues
+License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
+Depends: 
+    R (>= 4.0.0)
+RoxygenNote: 7.2.0
+Imports: 
+    doFuture,
+    dplyr,
+    foreach,
+    future,
+    parallelly,
+    progressr,
+    Rfast
+URL: https://github.com/hdakpo/fdh
