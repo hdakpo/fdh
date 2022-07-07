@@ -24,7 +24,7 @@ different Farrell distance function under different returns to scale
 assumptions:
 
 - **Input Technical Efficiency**
-  - **Variable Returns to Scale** (vrs)
+  - **\textcolor{darkblue}{Variable Returns to Scale}** (vrs)
   
   ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;E_i\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle&space;\min_{\mathbf{y}^\circ&space;\leq&space;\mathbf{y}_n}&space;\displaystyle&space;\max_{k=1,\cdots,&space;K}&space;\left\lbrace&space;\frac{x_{kn}}{x_k^\circ}&space;\right\rbrace)
   
@@ -38,7 +38,7 @@ assumptions:
   
   - **Nondecreasing Returns to Scale** (ndrs)
   
-  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;E_i\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\min_{n=1,&space;\cdots,&space;N}'&space;\left\lbrace\displaystyle{k=1,\cdots,&space;K}{\max}\frac{x_{kn}}{x_k^\circ}\cdot&space;\max&space;\left\lbrace\displaystyle\max_{q=1,&space;\cdots,&space;Q}\frac{y_q^\circ}{y_{qn}},&space;1\right\rbrace\right\rbrace)
+  ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color{white}&space;E_i\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\min_{n=1,&space;\cdots,&space;N}&space;\left\{\displaystyle\max_{k=1,\cdots,&space;K}\frac{x_{kn}}{x_k^\circ}\cdot&space;\max&space;\left\{\displaystyle\max_{q=1,&space;\cdots,&space;Q}\frac{y_q^\circ}{y_{qn}},&space;1\right\}\right\})
 
 - **Output Technical Efficiency**
   - **Variable Returns to Scale** (vrs)

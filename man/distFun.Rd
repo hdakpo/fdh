@@ -91,7 +91,7 @@ For the \strong{input orientation} we have the following:
 
 \item{nondecreasing returns to scale - \code{'ndrs'}}{\deqn{E_i
 \left(\mathbf{x}^\circ, \mathbf{y}^\circ\right)=
-\displaystyle\min_{n=1, \cdots, N}' \left\{\displaystyle{k=1,\cdots, K}{\max}
+\displaystyle\min_{n=1, \cdots, N} \left\{\displaystyle\max_{k=1,\cdots, K}
 \frac{x_{kn}}{x_k^\circ}\cdot \max \left\{\displaystyle\max_{q=1, \cdots, Q}
 \frac{y_q^\circ}{y_{qn}}, 1\right\}\right\}}}
 }
