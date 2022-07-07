@@ -100,7 +100,42 @@ For this orientation, let's first define:
 
 *fdh* also offers the possiblity of estimating the minimum cost as well as the 
 maximum revenue in addition to their corresponding cost efficiency and revenue 
-efficiency scores. 
+efficiency scores. The enumeration algorithms associated with the minimum and 
+the maximum revenues are as follows:
+
+- **Minimum Cost**
+  -**Variable Returns to Scale** (vrs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;C_{min}\left(\mathbf{w}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\min_{\mathbf{y}^\circ&space;\leq&space;\mathbf{y}_n}\left\lbrace\mathbf{w}^\circ&space;\mathbf{x}_n\right\rbrace)
+  
+  -**Constant Returns to Scale** (crs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;C_{min}\left(\mathbf{w}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\min_{n=1,&space;\cdots,&space;N}&space;\left\lbrace\displaystyle\max_{q=1,&space;\cdots,&space;Q}\left(\frac{y_q^\circ}{y_{qn}}\right)&space;\cdot&space;\mathbf{w}^\circ&space;\mathbf{x}_n\right\rbrace)
+  
+  -**Nonicreasing Returns to Scale** (nirs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;C_{min}\left(\mathbf{w}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\min_{\mathbf{y}^\circ&space;\leq&space;\mathbf{y}_n}\left\lbrace\displaystyle\max_{q=1,&space;\cdots,&space;Q}\left(\frac{y_q^\circ}{y_{qn}}\right)&space;\cdot&space;\mathbf{w}^\circ&space;\mathbf{x}_n\right\rbrace)
+  
+  -**Nondecreasing Returns to Scale** (ndrs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;C_{min}\left(\mathbf{w}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\min_{n=1,&space;\cdots,&space;N}&space;\left\lbrace\max&space;\left\lbrace\displaystyle\max_{q=1,&space;\cdots,&space;Q}\left(\frac{y_q^\circ}{y_{qn}}\right),&space;1\right\rbrace\cdot&space;\mathbf{w}^\circ&space;\mathbf{x}_n\right\rbrace)
+  
+- **Maximum Revenue**
+  -**Variable Returns to Scale** (vrs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;R_{max}\left(\mathbf{p}^\circ,\mathbf{y}^\circ\right)=\displaystyle\max_{\mathbf{x}^\circ&space;\geq&space;\mathbf{x}_n}\left\lbrace\mathbf{p}^\circ&space;\mathbf{y}_n\right\rbrace)
+  
+  -**Constant Returns to Scale** (crs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;R_{max}\left(\mathbf{p}^\circ,\mathbf{y}^\circ\right)=\displaystyle\max_{n=1,&space;\cdots,&space;N}&space;\left\lbrace\displaystyle\min_{k=1,&space;\cdots,&space;K}\left(\frac{x_k^\circ}{x_{kn}}\right)&space;\cdot&space;\mathbf{p}^\circ&space;\mathbf{y}_n\right\rbrace)
+  
+  -**Nonicreasing Returns to Scale** (nirs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;R_{max}\left(\mathbf{p}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\max_{n=1,&space;\cdots,&space;N}&space;\left\lbrace\min&space;\left\lbrace\displaystyle\min_{k=1,&space;\cdots,&space;K}\left(\frac{x_k^\circ}{x_{kn}}\right),&space;1\right\rbrace\cdot&space;\mathbf{p}^\circ&space;\mathbf{y}_n\right\rbrace)
+  
+  -**Nondecreasing Returns to Scale** (ndrs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;R_{max}\left(\mathbf{p}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\max_{\mathbf{x}^\circ&space;\geq&space;\mathbf{x}_n}\left\lbrace\displaystyle\min_{k=1,&space;\cdots,&space;K}\left(\frac{x_k^\circ}{x_{kn}}\right)&space;\cdot\mathbf{p}^\circ&space;\mathbf{y}_n\right\rbrace)
 
 For large datasets, the `parallel` can be used to speed up computations.
 

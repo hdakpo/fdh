@@ -94,7 +94,40 @@ Else
 
 *fdh* also offers the possiblity of estimating the minimum cost as well
 as the maximum revenue in addition to their corresponding cost
-efficiency and revenue efficiency scores.
+efficiency and revenue efficiency scores. The enumeration algorithms
+associated with the minimum and the maximum revenues are as follows:
+
+-   **Minimum Cost** -**Variable Returns to Scale** (vrs)
+
+    ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;C_%7Bmin%7D\left(\mathbf%7Bw%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)=\displaystyle\min_%7B\mathbf%7By%7D%5E\circ&space;\leq&space;\mathbf%7By%7D_n%7D\left\lbrace\mathbf%7Bw%7D%5E\circ&space;\mathbf%7Bx%7D_n\right\rbrace)
+
+    \-**Constant Returns to Scale** (crs)
+
+    ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;C_%7Bmin%7D\left(\mathbf%7Bw%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)=\displaystyle\min_%7Bn=1,&space;\cdots,&space;N%7D&space;\left\lbrace\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\left(\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D\right)&space;\cdot&space;\mathbf%7Bw%7D%5E\circ&space;\mathbf%7Bx%7D_n\right\rbrace)
+
+    \-**Nonicreasing Returns to Scale** (nirs)
+
+    ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;C_%7Bmin%7D\left(\mathbf%7Bw%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)=\displaystyle\min_%7B\mathbf%7By%7D%5E\circ&space;\leq&space;\mathbf%7By%7D_n%7D\left\lbrace\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\left(\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D\right)&space;\cdot&space;\mathbf%7Bw%7D%5E\circ&space;\mathbf%7Bx%7D_n\right\rbrace)
+
+    \-**Nondecreasing Returns to Scale** (ndrs)
+
+    ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;C_%7Bmin%7D\left(\mathbf%7Bw%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)=\displaystyle\min_%7Bn=1,&space;\cdots,&space;N%7D&space;\left\lbrace\max&space;\left\lbrace\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\left(\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D\right),&space;1\right\rbrace\cdot&space;\mathbf%7Bw%7D%5E\circ&space;\mathbf%7Bx%7D_n\right\rbrace)
+
+-   **Maximum Revenue** -**Variable Returns to Scale** (vrs)
+
+    ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;R_%7Bmax%7D\left(\mathbf%7Bp%7D%5E\circ,\mathbf%7By%7D%5E\circ\right)=\displaystyle\max_%7B\mathbf%7Bx%7D%5E\circ&space;\geq&space;\mathbf%7Bx%7D_n%7D\left\lbrace\mathbf%7Bp%7D%5E\circ&space;\mathbf%7By%7D_n\right\rbrace)
+
+    \-**Constant Returns to Scale** (crs)
+
+    ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;R_%7Bmax%7D\left(\mathbf%7Bp%7D%5E\circ,\mathbf%7By%7D%5E\circ\right)=\displaystyle\max_%7Bn=1,&space;\cdots,&space;N%7D&space;\left\lbrace\displaystyle\min_%7Bk=1,&space;\cdots,&space;K%7D\left(\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right)&space;\cdot&space;\mathbf%7Bp%7D%5E\circ&space;\mathbf%7By%7D_n\right\rbrace)
+
+    \-**Nonicreasing Returns to Scale** (nirs)
+
+    ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;R_%7Bmax%7D\left(\mathbf%7Bp%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)=\displaystyle\max_%7Bn=1,&space;\cdots,&space;N%7D&space;\left\lbrace\min&space;\left\lbrace\displaystyle\min_%7Bk=1,&space;\cdots,&space;K%7D\left(\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right),&space;1\right\rbrace\cdot&space;\mathbf%7Bp%7D%5E\circ&space;\mathbf%7By%7D_n\right\rbrace)
+
+    \-**Nondecreasing Returns to Scale** (ndrs)
+
+    ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;R_%7Bmax%7D\left(\mathbf%7Bp%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)=\displaystyle\max_%7B\mathbf%7Bx%7D%5E\circ&space;\geq&space;\mathbf%7Bx%7D_n%7D\left\lbrace\displaystyle\min_%7Bk=1,&space;\cdots,&space;K%7D\left(\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right)&space;\cdot\mathbf%7Bp%7D%5E\circ&space;\mathbf%7By%7D_n\right\rbrace)
 
 For large datasets, the `parallel` can be used to speed up computations.
 
