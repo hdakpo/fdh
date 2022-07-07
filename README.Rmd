@@ -25,11 +25,7 @@ assumptions:
 - **Input Technical Efficiency**
   - **Variable Returns to Scale** (vrs)
 
-<!-- $$E_i\left(\mathbf{x}^\circ, \mathbf{y}^\circ\right)=
-\displaystyle \min_{\mathbf{y}^\circ \leq \mathbf{y}_n} \displaystyle 
-\max_{k=1,\cdots, K} \left\lbrace \frac{x_{kn}}{x_k^\circ} \right\rbrace$$ --> 
-
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle%20%5Cmin_%7B%5Cmathbf%7By%7D%5E%5Ccirc%20%5Cleq%20%5Cmathbf%7By%7D_n%7D%20%5Cdisplaystyle%20%0D"></div>
+<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
 
 - **Output Technical Efficiency**
 - **Graph Technical Efficiency**
