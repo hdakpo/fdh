@@ -117,7 +117,7 @@ revEffDecomp <- function(xobs, yobs, pobs, xref = NULL, yref = NULL,
   }
   nobs <- dim(xobs)[2]
   progressr::with_progress({
-    p <- progressor(along = 1:nobs)
+    p <- progressr::progressor(along = 1:nobs)
     res <- foreach(dmu = 1:nobs, .combine = rbind) %dopar%
       {
         # dominating sets ------

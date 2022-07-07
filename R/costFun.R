@@ -169,8 +169,8 @@ costFun <- function(xobs, yobs, wobs, xref = NULL, yref = NULL,
     plan(sequential)
   }
   nobs <- dim(xobs)[2]
-  with_progress({
-    p <- progressor(along = 1:nobs)
+  progressr::with_progress({
+    p <- progressr::progressor(along = 1:nobs)
     res <- foreach(dmu = 1:nobs, .combine = rbind) %dopar%
       {
         # dominating sets ------
@@ -209,7 +209,7 @@ costFun <- function(xobs, yobs, wobs, xref = NULL, yref = NULL,
         p(sprintf("DMU = %g", dmu))
         c(costeff, costmin, bench)
       }
-  }, handlers = handlers("progress"))
+  }, handlers = progressr::handlers("progress"))
   colnames(res) <- c("CostEff", "CostMin", "Benchmarks")
   return(as_tibble(res))
 }

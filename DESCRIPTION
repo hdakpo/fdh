@@ -36,3 +36,5 @@ Maintainer: K Hervé Dakpo <herve.dakpo@inrae.fr>
 Author: K Hervé Dakpo [aut, cre],
   Frederic Ang [aut],
   Kristiaan Kerstens [aut]
+Suggests: 
+    progress

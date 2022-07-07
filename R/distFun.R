@@ -248,7 +248,7 @@ distFun <- function(xobs, yobs, xref = NULL, yref = NULL, rts = "vrs",
   }
   nobs <- dim(xobs)[2]
   progressr::with_progress({
-    p <- progressor(along = 1:nobs)
+    p <- progressr::progressor(along = 1:nobs)
     res <- foreach(dmu = 1:nobs, .combine = rbind) %dopar%
       {
         # ratios ------
