@@ -21,6 +21,7 @@ knitr::opts_chunk$set(
 *fdh* provides simple ways, using enumeration algorithms, for estimating 
 different Farrell distance function under different returns to scale 
 assumptions:
+
 - **Input Technical Efficiency**
   - **Variable Returns to Scale** (vrs)
 

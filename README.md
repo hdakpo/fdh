@@ -8,8 +8,10 @@
 
 *fdh* provides simple ways, using enumeration algorithms, for estimating
 different Farrell distance function under different returns to scale
-assumptions: - **Input Technical Efficiency** - **Variable Returns to
-Scale** (vrs)
+assumptions:
+
+-   **Input Technical Efficiency**
+    -   **Variable Returns to Scale** (vrs)
 
 <!-- $$E_i\left(\mathbf{x}^\circ, \mathbf{y}^\circ\right)=
 \displaystyle \min_{\mathbf{y}^\circ \leq \mathbf{y}_n} \displaystyle 
