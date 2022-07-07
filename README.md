@@ -17,7 +17,7 @@ assumptions:
 
 <div align="center">
 
-<img style="background: white;" src="https://render.githubusercontent.com/render/math?math=">
+<img style="background: white;" src="https://latex.codecogs.com/svg.latex?">
 
 </div>
 
