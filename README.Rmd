@@ -40,7 +40,7 @@ assumptions:
   
   - **Nondecreasing Returns to Scale** (ndrs)
   
-  ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color{white}&space;E_i\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\min_{n=1,&space;\cdots,&space;N}&space;\left\{\displaystyle\max_{k=1,\cdots,&space;K}\frac{x_{kn}}{x_k^\circ}\cdot&space;\max&space;\left\lbrace\displaystyle\max_{q=1,&space;\cdots,&space;Q}\frac{y_q^\circ}{y_{qn}},&space;1\right\rbrace)
+  ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color{white}&space;E_i\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\min_{n=1,&space;\cdots,&space;N}&space;\left\lbrace\displaystyle\max_{k=1,\cdots,&space;K}\frac{x_{kn}}{x_k^\circ}\cdot&space;\max&space;\left\lbrace\displaystyle\max_{q=1,&space;\cdots,&space;Q}\frac{y_q^\circ}{y_{qn}},&space;1\right\rbrace\right\rbrace)
 
 - **Output Technical Efficiency**
   - **Variable Returns to Scale** (vrs)

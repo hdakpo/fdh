@@ -30,7 +30,7 @@ assumptions:
 
     -   **Nondecreasing Returns to Scale** (ndrs)
 
-    ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color%7Bwhite%7D&space;E_i\left(\mathbf%7Bx%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)=\displaystyle\min_%7Bn=1,&space;\cdots,&space;N%7D&space;\left%7B\displaystyle\max_%7Bk=1,\cdots,&space;K%7D\frac%7Bx_%7Bkn%7D%7D%7Bx_k%5E\circ%7D\cdot&space;\max&space;\left\lbrace\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D,&space;1\right\rbrace)
+    ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color%7Bwhite%7D&space;E_i\left(\mathbf%7Bx%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)=\displaystyle\min_%7Bn=1,&space;\cdots,&space;N%7D&space;\left\lbrace\displaystyle\max_%7Bk=1,\cdots,&space;K%7D\frac%7Bx_%7Bkn%7D%7D%7Bx_k%5E\circ%7D\cdot&space;\max&space;\left\lbrace\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D,&space;1\right\rbrace\right\rbrace)
 
 -   **Output Technical Efficiency**
 
