@@ -169,7 +169,7 @@ costFun <- function(xobs, yobs, wobs, xref = NULL, yref = NULL,
     plan(sequential)
   }
   nobs <- dim(xobs)[2]
-  progressr::with_progress({
+  with_progress({
     p <- progressor(along = 1:nobs)
     res <- foreach(dmu = 1:nobs, .combine = rbind) %dopar%
       {
@@ -209,7 +209,7 @@ costFun <- function(xobs, yobs, wobs, xref = NULL, yref = NULL,
         p(sprintf("DMU = %g", dmu))
         c(costeff, costmin, bench)
       }
-  }, handlers = progressr::handlers("progress"))
+  }, handlers = handlers("progress"))
   colnames(res) <- c("CostEff", "CostMin", "Benchmarks")
   return(as_tibble(res))
 }
