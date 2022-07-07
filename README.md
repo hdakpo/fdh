@@ -58,78 +58,102 @@ assumptions:
 
 -   **Graph Technical Efficiency**
 
-For this orientation, let’s first define:
+    For this orientation, let’s first define:
 
-![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;\delta&space;=&space;\left(\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D&space;\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D&space;\cdot&space;\displaystyle\min_%7Bk=1,\cdots,&space;K%7D&space;\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right)%5E%7B1/2%7D)
+    ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;\delta&space;=&space;\left(\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D&space;\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D&space;\cdot&space;\displaystyle\min_%7Bk=1,\cdots,&space;K%7D&space;\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right)%5E%7B1/2%7D)
 
--   **Variable Returns to Scale** (vrs)
+    -   **Variable Returns to Scale** (vrs)
 
-![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;E_%7BGR%7D\left(\mathbf%7Bx%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)=\displaystyle\min_%7Bn=1,&space;\cdots,&space;N%7D&space;\left\lbrace\max\left(\displaystyle\max_%7Bk=1,\cdots,&space;K%7D\frac%7Bx_%7Bkn%7D%7D%7Bx_k%5E\circ%7D,\displaystyle\max_%7Bq=1,\cdots,&space;Q%7D\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D\right)\right\rbrace)
+    ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;E_%7BGR%7D\left(\mathbf%7Bx%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)=\displaystyle\min_%7Bn=1,&space;\cdots,&space;N%7D&space;\left\lbrace\max\left(\displaystyle\max_%7Bk=1,\cdots,&space;K%7D\frac%7Bx_%7Bkn%7D%7D%7Bx_k%5E\circ%7D,\displaystyle\max_%7Bq=1,\cdots,&space;Q%7D\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D\right)\right\rbrace)
 
--   **Constant Returns to Scale** (crs)
+    -   **Constant Returns to Scale** (crs)
 
-![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color%7Bwhite%7D&space;E_%7BGR%7D\left(\mathbf%7Bx%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)&space;=\displaystyle\min_%7Bn=1,&space;\cdots,&space;N%7D&space;\left\lbrace\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D\Big/\displaystyle\min_%7Bk=1,\cdots,&space;K%7D\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right\rbrace%5E%7B1/2%7D)
+    ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color%7Bwhite%7D&space;E_%7BGR%7D\left(\mathbf%7Bx%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)&space;=\displaystyle\min_%7Bn=1,&space;\cdots,&space;N%7D&space;\left\lbrace\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D\Big/\displaystyle\min_%7Bk=1,\cdots,&space;K%7D\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right\rbrace%5E%7B1/2%7D)
 
--   **Nonicreasing Returns to Scale** (nirs)
+    -   **Nonicreasing Returns to Scale** (nirs)
 
-If
-![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color%7Bwhite%7D&space;\delta&space;\leq&space;1)
+    If
+    ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color%7Bwhite%7D&space;\delta&space;\leq&space;1)
 
-![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color%7Bwhite%7D&space;E_%7BGR%7D\left(\mathbf%7Bx%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)&space;=\displaystyle\min_%7Bn=1,&space;\cdots,&space;N%7D&space;\left\lbrace\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D\Big/\displaystyle\min_%7Bk=1,\cdots,&space;K%7D\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right\rbrace%5E%7B1/2%7D)
+    ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color%7Bwhite%7D&space;E_%7BGR%7D\left(\mathbf%7Bx%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)&space;=\displaystyle\min_%7Bn=1,&space;\cdots,&space;N%7D&space;\left\lbrace\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D\Big/\displaystyle\min_%7Bk=1,\cdots,&space;K%7D\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right\rbrace%5E%7B1/2%7D)
 
-Else
+    Else
 
-![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color%7Bwhite%7D&space;E_%7BGR%7D\left(\mathbf%7Bx%7D%5E\circ,\mathbf%7By%7D%5E\circ\right)&space;=&space;\displaystyle\min_%7Bn=1,&space;\cdots,&space;N%7D\left\lbrace\max\left%5B\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D,&space;\left(\displaystyle\min_%7Bk=1,\cdots,&space;K%7D\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right)%5E%7B-1%7D&space;\right%5D\right\rbrace)
+    ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color%7Bwhite%7D&space;E_%7BGR%7D\left(\mathbf%7Bx%7D%5E\circ,\mathbf%7By%7D%5E\circ\right)&space;=&space;\displaystyle\min_%7Bn=1,&space;\cdots,&space;N%7D\left\lbrace\max\left%5B\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D,&space;\left(\displaystyle\min_%7Bk=1,\cdots,&space;K%7D\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right)%5E%7B-1%7D&space;\right%5D\right\rbrace)
 
--   **Nondecreasing Returns to Scale** (ndrs)
+    -   **Nondecreasing Returns to Scale** (ndrs)
 
-If
-![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color%7Bwhite%7D&space;\delta&space;\geq&space;1)
+    If
+    ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color%7Bwhite%7D&space;\delta&space;\geq&space;1)
 
-![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color%7Bwhite%7D&space;E_%7BGR%7D\left(\mathbf%7Bx%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)&space;=\displaystyle\min_%7Bn=1,&space;\cdots,&space;N%7D&space;\left\lbrace\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D\Big/\displaystyle\min_%7Bk=1,\cdots,&space;K%7D\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right\rbrace%5E%7B1/2%7D)
+    ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color%7Bwhite%7D&space;E_%7BGR%7D\left(\mathbf%7Bx%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)&space;=\displaystyle\min_%7Bn=1,&space;\cdots,&space;N%7D&space;\left\lbrace\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D\Big/\displaystyle\min_%7Bk=1,\cdots,&space;K%7D\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right\rbrace%5E%7B1/2%7D)
 
-Else
+    Else
 
-![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color%7Bwhite%7D&space;E_%7BGR%7D\left(\mathbf%7Bx%7D%5E\circ,\mathbf%7By%7D%5E\circ\right)&space;=&space;\displaystyle\min_%7Bn=1,&space;\cdots,&space;N%7D\left\lbrace\max\left%5B\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D,&space;\left(\displaystyle\min_%7Bk=1,\cdots,&space;K%7D\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right)%5E%7B-1%7D&space;\right%5D\right\rbrace)
+    ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color%7Bwhite%7D&space;E_%7BGR%7D\left(\mathbf%7Bx%7D%5E\circ,\mathbf%7By%7D%5E\circ\right)&space;=&space;\displaystyle\min_%7Bn=1,&space;\cdots,&space;N%7D\left\lbrace\max\left%5B\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D,&space;\left(\displaystyle\min_%7Bk=1,\cdots,&space;K%7D\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right)%5E%7B-1%7D&space;\right%5D\right\rbrace)
 
 *fdh* also offers the possiblity of estimating the minimum cost as well
 as the maximum revenue in addition to their corresponding cost
 efficiency and revenue efficiency scores. The enumeration algorithms
 associated with the minimum and the maximum revenues are as follows:
 
--   **Minimum Cost** -**Variable Returns to Scale** (vrs)
+-   **Minimum Cost**
+
+    -   **Variable Returns to Scale** (vrs)
 
     ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;C_%7Bmin%7D\left(\mathbf%7Bw%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)=\displaystyle\min_%7B\mathbf%7By%7D%5E\circ&space;\leq&space;\mathbf%7By%7D_n%7D\left\lbrace\mathbf%7Bw%7D%5E\circ&space;\mathbf%7Bx%7D_n\right\rbrace)
 
-    \-**Constant Returns to Scale** (crs)
+    -   **Constant Returns to Scale** (crs)
 
     ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;C_%7Bmin%7D\left(\mathbf%7Bw%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)=\displaystyle\min_%7Bn=1,&space;\cdots,&space;N%7D&space;\left\lbrace\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\left(\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D\right)&space;\cdot&space;\mathbf%7Bw%7D%5E\circ&space;\mathbf%7Bx%7D_n\right\rbrace)
 
-    \-**Nonicreasing Returns to Scale** (nirs)
+    -   **Nonicreasing Returns to Scale** (nirs)
 
     ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;C_%7Bmin%7D\left(\mathbf%7Bw%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)=\displaystyle\min_%7B\mathbf%7By%7D%5E\circ&space;\leq&space;\mathbf%7By%7D_n%7D\left\lbrace\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\left(\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D\right)&space;\cdot&space;\mathbf%7Bw%7D%5E\circ&space;\mathbf%7Bx%7D_n\right\rbrace)
 
-    \-**Nondecreasing Returns to Scale** (ndrs)
+    -   **Nondecreasing Returns to Scale** (ndrs)
 
     ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;C_%7Bmin%7D\left(\mathbf%7Bw%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)=\displaystyle\min_%7Bn=1,&space;\cdots,&space;N%7D&space;\left\lbrace\max&space;\left\lbrace\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\left(\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D\right),&space;1\right\rbrace\cdot&space;\mathbf%7Bw%7D%5E\circ&space;\mathbf%7Bx%7D_n\right\rbrace)
 
--   **Maximum Revenue** -**Variable Returns to Scale** (vrs)
+-   **Maximum Revenue**
+
+    -   **Variable Returns to Scale** (vrs)
 
     ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;R_%7Bmax%7D\left(\mathbf%7Bp%7D%5E\circ,\mathbf%7By%7D%5E\circ\right)=\displaystyle\max_%7B\mathbf%7Bx%7D%5E\circ&space;\geq&space;\mathbf%7Bx%7D_n%7D\left\lbrace\mathbf%7Bp%7D%5E\circ&space;\mathbf%7By%7D_n\right\rbrace)
 
-    \-**Constant Returns to Scale** (crs)
+    -   **Constant Returns to Scale** (crs)
 
     ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;R_%7Bmax%7D\left(\mathbf%7Bp%7D%5E\circ,\mathbf%7By%7D%5E\circ\right)=\displaystyle\max_%7Bn=1,&space;\cdots,&space;N%7D&space;\left\lbrace\displaystyle\min_%7Bk=1,&space;\cdots,&space;K%7D\left(\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right)&space;\cdot&space;\mathbf%7Bp%7D%5E\circ&space;\mathbf%7By%7D_n\right\rbrace)
 
-    \-**Nonicreasing Returns to Scale** (nirs)
+    -   **Nonicreasing Returns to Scale** (nirs)
 
     ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;R_%7Bmax%7D\left(\mathbf%7Bp%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)=\displaystyle\max_%7Bn=1,&space;\cdots,&space;N%7D&space;\left\lbrace\min&space;\left\lbrace\displaystyle\min_%7Bk=1,&space;\cdots,&space;K%7D\left(\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right),&space;1\right\rbrace\cdot&space;\mathbf%7Bp%7D%5E\circ&space;\mathbf%7By%7D_n\right\rbrace)
 
-    \-**Nondecreasing Returns to Scale** (ndrs)
+    -   **Nondecreasing Returns to Scale** (ndrs)
 
     ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;R_%7Bmax%7D\left(\mathbf%7Bp%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)=\displaystyle\max_%7B\mathbf%7Bx%7D%5E\circ&space;\geq&space;\mathbf%7Bx%7D_n%7D\left\lbrace\displaystyle\min_%7Bk=1,&space;\cdots,&space;K%7D\left(\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right)&space;\cdot\mathbf%7Bp%7D%5E\circ&space;\mathbf%7By%7D_n\right\rbrace)
 
-For large datasets, the `parallel` can be used to speed up computations.
+Finally, different scaled dominance sets can be obtained for each
+observation:
+
+-   **Variable Returns to Scale** (vrs)
+
+    ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;\left\lbrace&space;\left(\mathbf%7Bx%7D_n,&space;\mathbf%7By%7D_n\right)&space;%7C&space;\mathbf%7Bx%7D&space;\geq&space;\mathbf%7Bx%7D_n,&space;\mathbf%7By%7D&space;\leq&space;\mathbf%7Bx%7D_n\right\rbrace)
+
+-   \*Constant Returns to Scale\*\* (crs)
+
+    ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;\left\lbrace&space;\left(\mathbf%7Bx%7D_n,&space;\mathbf%7By%7D_n\right)&space;%7C&space;\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D&space;\leq&space;\displaystyle\min_%7Bk=1,&space;\cdots,&space;K%7D\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right\rbrace)
+
+-   **Nonicreasing Returns to Scale** (nirs)
+
+    ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;\left\lbrace&space;\left(\mathbf%7Bx%7D_n,&space;\mathbf%7By%7D_n\right)&space;%7C&space;\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D&space;\leq&space;1\right\rbrace)
+
+-   **Nondecreasing Returns to Scale** (ndrs)
+
+    ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;\left\lbrace&space;\left(\mathbf%7Bx%7D_n,&space;\mathbf%7By%7D_n\right)&space;%7C&space;\displaystyle\min_%7Bk=1,&space;\cdots,&space;K%7D\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D&space;\geq&space;1\right\rbrace)
+
+For large datasets, the `parallel` option can be used to speed up
+computations.
 
 ## Installation
 

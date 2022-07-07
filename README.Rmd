@@ -66,9 +66,9 @@ assumptions:
   
 - **Graph Technical Efficiency**
 
-For this orientation, let's first define:
+  For this orientation, let's first define:
 
-![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;\delta&space;=&space;\left(\displaystyle\max_{q=1,&space;\cdots,&space;Q}&space;\frac{y_q^\circ}{y_{qn}}&space;\cdot&space;\displaystyle\min_{k=1,\cdots,&space;K}&space;\frac{x_k^\circ}{x_{kn}}\right)^{1/2})
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;\delta&space;=&space;\left(\displaystyle\max_{q=1,&space;\cdots,&space;Q}&space;\frac{y_q^\circ}{y_{qn}}&space;\cdot&space;\displaystyle\min_{k=1,\cdots,&space;K}&space;\frac{x_k^\circ}{x_{kn}}\right)^{1/2})
 
   - **Variable Returns to Scale** (vrs)
   
@@ -104,40 +104,58 @@ efficiency scores. The enumeration algorithms associated with the minimum and
 the maximum revenues are as follows:
 
 - **Minimum Cost**
-  -**Variable Returns to Scale** (vrs)
+  - **Variable Returns to Scale** (vrs)
   
   ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;C_{min}\left(\mathbf{w}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\min_{\mathbf{y}^\circ&space;\leq&space;\mathbf{y}_n}\left\lbrace\mathbf{w}^\circ&space;\mathbf{x}_n\right\rbrace)
   
-  -**Constant Returns to Scale** (crs)
+  - **Constant Returns to Scale** (crs)
   
   ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;C_{min}\left(\mathbf{w}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\min_{n=1,&space;\cdots,&space;N}&space;\left\lbrace\displaystyle\max_{q=1,&space;\cdots,&space;Q}\left(\frac{y_q^\circ}{y_{qn}}\right)&space;\cdot&space;\mathbf{w}^\circ&space;\mathbf{x}_n\right\rbrace)
   
-  -**Nonicreasing Returns to Scale** (nirs)
+  - **Nonicreasing Returns to Scale** (nirs)
   
   ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;C_{min}\left(\mathbf{w}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\min_{\mathbf{y}^\circ&space;\leq&space;\mathbf{y}_n}\left\lbrace\displaystyle\max_{q=1,&space;\cdots,&space;Q}\left(\frac{y_q^\circ}{y_{qn}}\right)&space;\cdot&space;\mathbf{w}^\circ&space;\mathbf{x}_n\right\rbrace)
   
-  -**Nondecreasing Returns to Scale** (ndrs)
+  - **Nondecreasing Returns to Scale** (ndrs)
   
   ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;C_{min}\left(\mathbf{w}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\min_{n=1,&space;\cdots,&space;N}&space;\left\lbrace\max&space;\left\lbrace\displaystyle\max_{q=1,&space;\cdots,&space;Q}\left(\frac{y_q^\circ}{y_{qn}}\right),&space;1\right\rbrace\cdot&space;\mathbf{w}^\circ&space;\mathbf{x}_n\right\rbrace)
   
 - **Maximum Revenue**
-  -**Variable Returns to Scale** (vrs)
+  - **Variable Returns to Scale** (vrs)
   
   ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;R_{max}\left(\mathbf{p}^\circ,\mathbf{y}^\circ\right)=\displaystyle\max_{\mathbf{x}^\circ&space;\geq&space;\mathbf{x}_n}\left\lbrace\mathbf{p}^\circ&space;\mathbf{y}_n\right\rbrace)
   
-  -**Constant Returns to Scale** (crs)
+  - **Constant Returns to Scale** (crs)
   
   ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;R_{max}\left(\mathbf{p}^\circ,\mathbf{y}^\circ\right)=\displaystyle\max_{n=1,&space;\cdots,&space;N}&space;\left\lbrace\displaystyle\min_{k=1,&space;\cdots,&space;K}\left(\frac{x_k^\circ}{x_{kn}}\right)&space;\cdot&space;\mathbf{p}^\circ&space;\mathbf{y}_n\right\rbrace)
   
-  -**Nonicreasing Returns to Scale** (nirs)
+  - **Nonicreasing Returns to Scale** (nirs)
   
   ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;R_{max}\left(\mathbf{p}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\max_{n=1,&space;\cdots,&space;N}&space;\left\lbrace\min&space;\left\lbrace\displaystyle\min_{k=1,&space;\cdots,&space;K}\left(\frac{x_k^\circ}{x_{kn}}\right),&space;1\right\rbrace\cdot&space;\mathbf{p}^\circ&space;\mathbf{y}_n\right\rbrace)
   
-  -**Nondecreasing Returns to Scale** (ndrs)
+  - **Nondecreasing Returns to Scale** (ndrs)
   
   ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;R_{max}\left(\mathbf{p}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\max_{\mathbf{x}^\circ&space;\geq&space;\mathbf{x}_n}\left\lbrace\displaystyle\min_{k=1,&space;\cdots,&space;K}\left(\frac{x_k^\circ}{x_{kn}}\right)&space;\cdot\mathbf{p}^\circ&space;\mathbf{y}_n\right\rbrace)
+  
+Finally, different scaled dominance sets can be obtained for each observation:
 
-For large datasets, the `parallel` can be used to speed up computations.
+- **Variable Returns to Scale** (vrs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;\left\lbrace&space;\left(\mathbf{x}_n,&space;\mathbf{y}_n\right)&space;|&space;\mathbf{x}&space;\geq&space;\mathbf{x}_n,&space;\mathbf{y}&space;\leq&space;\mathbf{x}_n\right\rbrace)
+  
+- *Constant Returns to Scale** (crs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;\left\lbrace&space;\left(\mathbf{x}_n,&space;\mathbf{y}_n\right)&space;|&space;\displaystyle\max_{q=1,&space;\cdots,&space;Q}\frac{y_q^\circ}{y_{qn}}&space;\leq&space;\displaystyle\min_{k=1,&space;\cdots,&space;K}\frac{x_k^\circ}{x_{kn}}\right\rbrace)
+  
+- **Nonicreasing Returns to Scale** (nirs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;\left\lbrace&space;\left(\mathbf{x}_n,&space;\mathbf{y}_n\right)&space;|&space;\displaystyle\max_{q=1,&space;\cdots,&space;Q}\frac{y_q^\circ}{y_{qn}}&space;\leq&space;1\right\rbrace)
+  
+- **Nondecreasing Returns to Scale** (ndrs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;\left\lbrace&space;\left(\mathbf{x}_n,&space;\mathbf{y}_n\right)&space;|&space;\displaystyle\min_{k=1,&space;\cdots,&space;K}\frac{x_k^\circ}{x_{kn}}&space;\geq&space;1\right\rbrace)
+
+For large datasets, the `parallel` option can be used to speed up computations.
 
 ## Installation
 
