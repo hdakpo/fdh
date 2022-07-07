@@ -13,7 +13,7 @@ assumptions:
 -   **Input Technical Efficiency**
     -   **Variable Returns to Scale** (vrs)
 
-![equation](https://latex.codecogs.com/svg.image?\color%7Bwhite%7D&space;E_i\left(\mathbf%7Bx%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)=\displaystyle&space;\min_%7B\mathbf%7By%7D%5E\circ&space;\leq&space;\mathbf%7By%7D_n%7D&space;\displaystyle&space;\max_%7Bk=1,\cdots,&space;K%7D&space;\left\lbrace&space;\frac%7Bx_%7Bkn%7D%7D%7Bx_k%5E\circ%7D&space;\right\rbrace)
+![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;E_i\left(\mathbf%7Bx%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)=\displaystyle&space;\min_%7B\mathbf%7By%7D%5E\circ&space;\leq&space;\mathbf%7By%7D_n%7D&space;\displaystyle&space;\max_%7Bk=1,\cdots,&space;K%7D&space;\left\lbrace&space;\frac%7Bx_%7Bkn%7D%7D%7Bx_k%5E\circ%7D&space;\right\rbrace)
 
 -   **Output Technical Efficiency**
 -   **Graph Technical Efficiency**

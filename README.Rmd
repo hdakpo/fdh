@@ -25,7 +25,7 @@ assumptions:
 - **Input Technical Efficiency**
   - **Variable Returns to Scale** (vrs)
 
-![equation](https://latex.codecogs.com/svg.image?\color{white}&space;E_i\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle&space;\min_{\mathbf{y}^\circ&space;\leq&space;\mathbf{y}_n}&space;\displaystyle&space;\max_{k=1,\cdots,&space;K}&space;\left\lbrace&space;\frac{x_{kn}}{x_k^\circ}&space;\right\rbrace)
+![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;E_i\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle&space;\min_{\mathbf{y}^\circ&space;\leq&space;\mathbf{y}_n}&space;\displaystyle&space;\max_{k=1,\cdots,&space;K}&space;\left\lbrace&space;\frac{x_{kn}}{x_k^\circ}&space;\right\rbrace)
 
 - **Output Technical Efficiency**
 - **Graph Technical Efficiency**
