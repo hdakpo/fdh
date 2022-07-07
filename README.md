@@ -8,6 +8,8 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/hdakpo/fdh/badge)](https://www.codefactor.io/repository/github/hdakpo/fdh)
 [![](https://img.shields.io/github/languages/code-size/hdakpo/fdh.svg)](https://github.com/hdakpo/fdh)
 [![](https://img.shields.io/badge/devel%20version-0.1.0.900-darkred.svg)](https://github.com/hdakpo/fdh)
+[![R build
+status](https://github.com/hdakpo/fdh/workflows/R-CMD-check/badge.svg)](https://github.com/hdakpo/fdh/actions)
 <!-- badges: end -->
 
 *fdh* provides simple ways, using enumeration algorithms, for estimating
