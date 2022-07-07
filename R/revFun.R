@@ -159,8 +159,6 @@ revFun <- function(xobs, yobs, pobs, xref = NULL, yref = NULL,
   xref <- t(xref)
   yref <- t(yref)
   # loop for efficiencies estimation ------
-  handlers(global = TRUE)
-  handlers("progress")
   registerDoFuture()
   if (parallel == TRUE & cores == 1) {
     parallel <- FALSE
@@ -171,42 +169,47 @@ revFun <- function(xobs, yobs, pobs, xref = NULL, yref = NULL,
     plan(sequential)
   }
   nobs <- dim(xobs)[2]
-  p <- progressor(along = 1:nobs)
-  res <- foreach(dmu = 1:nobs, .combine = rbind) %dopar% {
-    # dominating sets ------
-    xratio <- xobs[, dmu]/xref
-    dominatingx <- colMins(xratio, value = TRUE) >= 1
-    if (rts == "vrs") {
-      stp1 <- colsums(yref[, dominatingx, drop = FALSE] *
-        pobs[, dmu])
-      bench <- which(dominatingx == TRUE)[which.max(stp1)]
-      revmax <- max(stp1)
-    } else {
-      if (rts == "crs") {
-        stp1 <- colsums(yref * pobs[, dmu]) * colMins(xratio, value = TRUE)
-        bench <- which.max(stp1)
-        revmax <- max(stp1)
-      } else {
-        if (rts == "nirs") {
-          stp1 <- colsums(yref * pobs[, dmu]) *
-            colMins(rbind(xratio, 1))
-          bench <- which.max(stp1)
-          revmax <- max(stp1)
-        } else {
-          if (rts == "ndrs") {
+  progressr::with_progress({
+    p <- progressor(along = 1:nobs)
+    res <- foreach(dmu = 1:nobs, .combine = rbind) %dopar%
+      {
+        # dominating sets ------
+        xratio <- xobs[, dmu]/xref
+        dominatingx <- colMins(xratio, value = TRUE) >=
+          1
+        if (rts == "vrs") {
           stp1 <- colsums(yref[, dominatingx, drop = FALSE] *
-            pobs[, dmu]) * colMins(xratio[, dominatingx,
-            drop = FALSE])
+          pobs[, dmu])
           bench <- which(dominatingx == TRUE)[which.max(stp1)]
           revmax <- max(stp1)
+        } else {
+          if (rts == "crs") {
+          stp1 <- colsums(yref * pobs[, dmu]) * colMins(xratio,
+            value = TRUE)
+          bench <- which.max(stp1)
+          revmax <- max(stp1)
+          } else {
+          if (rts == "nirs") {
+            stp1 <- colsums(yref * pobs[, dmu]) * colMins(rbind(xratio,
+            1))
+            bench <- which.max(stp1)
+            revmax <- max(stp1)
+          } else {
+            if (rts == "ndrs") {
+            stp1 <- colsums(yref[, dominatingx, drop = FALSE] *
+              pobs[, dmu]) * colMins(xratio[, dominatingx,
+              drop = FALSE])
+            bench <- which(dominatingx == TRUE)[which.max(stp1)]
+            revmax <- max(stp1)
+            }
+          }
           }
         }
+        reveff <- sum(yobs[, dmu] * pobs[, dmu])/revmax
+        p(sprintf("DMU = %g", dmu))
+        c(reveff, revmax, bench)
       }
-    }
-    reveff <- sum(yobs[, dmu] * pobs[, dmu])/revmax
-    p(sprintf("DMU = %g", dmu))
-    c(reveff, revmax, bench)
-  }
+  }, handlers = progressr::handlers("progress"))
   colnames(res) <- c("RevEff", "RevMax", "Benchmarks")
   return(as_tibble(res))
 }

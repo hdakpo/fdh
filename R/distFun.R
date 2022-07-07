@@ -235,8 +235,8 @@ distFun <- function(xobs, yobs, xref = NULL, yref = NULL, rts = "vrs",
   xref <- t(xref)
   yref <- t(yref)
   # loop for efficiencies estimation ------
-  handlers(global = TRUE)
-  handlers("progress")
+  # handlers('progress')
+  # handlers(global = TRUE)
   registerDoFuture()
   if (parallel == TRUE & cores == 1) {
     parallel <- FALSE
@@ -247,127 +247,133 @@ distFun <- function(xobs, yobs, xref = NULL, yref = NULL, rts = "vrs",
     plan(sequential)
   }
   nobs <- dim(xobs)[2]
-  p <- progressor(along = 1:nobs)
-  res <- foreach(dmu = 1:nobs, .combine = rbind) %dopar% {
-    # ratios ------
-    xratio <- xobs[, dmu]/xref
-    yratio <- yobs[, dmu]/yref
-    if (orientation == "in") {
-      if (rts == "vrs") {
-        dominating <- colMaxs(yratio, value = TRUE) <=
-          1
-        stp1 <- colMaxs(xref[, dominating, drop = FALSE]/xobs[,
-          dmu], value = TRUE)
-        bench <- which(dominating == TRUE)[which.min(stp1)]
-        eff <- stp1[which.min(stp1)]
-      } else {
-        if (rts == "crs") {
-          stp1 <- colMaxs(xref/xobs[, dmu], value = TRUE) *
-          colMaxs(yobs[, dmu]/yref, value = TRUE)
-          bench <- which.min(stp1)
-          eff <- stp1[bench]
-        } else {
-          if (rts == "nirs") {
+  progressr::with_progress({
+    p <- progressor(along = 1:nobs)
+    res <- foreach(dmu = 1:nobs, .combine = rbind) %dopar%
+      {
+        # ratios ------
+        xratio <- xobs[, dmu]/xref
+        yratio <- yobs[, dmu]/yref
+        if (orientation == "in") {
+          if (rts == "vrs") {
           dominating <- colMaxs(yratio, value = TRUE) <=
             1
           stp1 <- colMaxs(xref[, dominating, drop = FALSE]/xobs[,
-            dmu], value = TRUE) * colMaxs(yobs[, dmu]/yref[,
-            dominating, drop = FALSE], value = TRUE)
+            dmu], value = TRUE)
           bench <- which(dominating == TRUE)[which.min(stp1)]
           eff <- stp1[which.min(stp1)]
           } else {
-          if (rts == "ndrs") {
+          if (rts == "crs") {
             stp1 <- colMaxs(xref/xobs[, dmu], value = TRUE) *
-            colMaxs(rbind(yobs[, dmu]/yref, 1), value = TRUE)
+            colMaxs(yobs[, dmu]/yref, value = TRUE)
             bench <- which.min(stp1)
             eff <- stp1[bench]
-          }
-          }
-        }
-      }
-    } else {
-      if (orientation == "out") {
-        if (rts == "vrs") {
-          dominating <- colMins(xratio, value = TRUE) >=
-          1
-          stp1 <- colMins(yref[, dominating, drop = FALSE]/yobs[,
-          dmu], value = TRUE)
-          bench <- which(dominating == TRUE)[which.max(stp1)]
-          eff <- stp1[which.max(stp1)]
-        } else {
-          if (rts == "crs") {
-          stp1 <- colMins(yref/yobs[, dmu], value = TRUE) *
-            colMins(xobs[, dmu]/xref, value = TRUE)
-          bench <- which.max(stp1)
-          eff <- stp1[bench]
-          } else {
-          if (rts == "ndrs") {
-            dominating <- colMins(xratio, value = TRUE) >=
-            1
-            stp1 <- colMins(yref[, dominating, drop = FALSE]/yobs[,
-            dmu], 2, value = TRUE) * colMins(xobs[,
-            dmu]/xref[, dominating, drop = FALSE],
-            value = TRUE)
-            bench <- which(dominating == TRUE)[which.max(stp1)]
-            eff <- stp1[which.max(stp1)]
           } else {
             if (rts == "nirs") {
-            stp1 <- colMins(yref/yobs[, dmu], value = TRUE) *
-              colMins(rbind(xobs[, dmu]/xref, 1),
+            dominating <- colMaxs(yratio, value = TRUE) <=
+              1
+            stp1 <- colMaxs(xref[, dominating, drop = FALSE]/xobs[,
+              dmu], value = TRUE) * colMaxs(yobs[,
+              dmu]/yref[, dominating, drop = FALSE],
               value = TRUE)
-            bench <- which.max(stp1)
-            eff <- stp1[bench]
-            }
-          }
-          }
-        }
-      } else {
-        if (orientation == "graph") {
-          if (rts == "vrs") {
-          stp1 <- colMaxs(rbind(xref/xobs[, dmu], yobs[,
-            dmu]/yref), value = TRUE)
-          bench <- which.min(stp1)
-          eff <- stp1[bench]
-          } else {
-          if (rts == "crs") {
-            stp1 <- sqrt(colMaxs(yobs[, dmu]/yref,
-            value = TRUE)/colMins(xobs[, dmu]/xref,
-            value = TRUE))
-            bench <- which.min(stp1)
-            eff <- stp1[bench]
-          } else {
-            if (rts == "nirs") {
-            delta <- colMins(xobs[, dmu]/xref, value = TRUE) *
-              colMaxs(yobs[, dmu]/yref, value = TRUE)
-            stp1 <- ifelse(delta <= 1, sqrt(colMaxs(yobs[,
-              dmu]/yref, value = TRUE)/colMins(xobs[,
-              dmu]/xref, value = TRUE)), colMaxs(rbind(colMaxs(yobs[,
-              dmu]/yref, value = TRUE), 1/(colMins(xobs[,
-              dmu]/xref, value = TRUE))), value = TRUE))
-            bench <- which.min(stp1)
-            eff <- stp1[bench]
+            bench <- which(dominating == TRUE)[which.min(stp1)]
+            eff <- stp1[which.min(stp1)]
             } else {
             if (rts == "ndrs") {
-              delta <- colMins(xobs[, dmu]/xref,
-              value = TRUE) * colMaxs(yobs[, dmu]/yref,
-              value = TRUE)
-              stp1 <- ifelse(delta >= 1, sqrt(colMaxs(yobs[,
-              dmu]/yref, value = TRUE)/colMins(xobs[,
-              dmu]/xref, value = TRUE)), colMaxs(rbind(colMaxs(yobs[,
-              dmu]/yref, value = TRUE), 1/(colMins(xobs[,
-              dmu]/xref, value = TRUE))), value = TRUE))
+              stp1 <- colMaxs(xref/xobs[, dmu], value = TRUE) *
+              colMaxs(rbind(yobs[, dmu]/yref, 1),
+                value = TRUE)
               bench <- which.min(stp1)
               eff <- stp1[bench]
             }
             }
           }
           }
+        } else {
+          if (orientation == "out") {
+          if (rts == "vrs") {
+            dominating <- colMins(xratio, value = TRUE) >=
+            1
+            stp1 <- colMins(yref[, dominating, drop = FALSE]/yobs[,
+            dmu], value = TRUE)
+            bench <- which(dominating == TRUE)[which.max(stp1)]
+            eff <- stp1[which.max(stp1)]
+          } else {
+            if (rts == "crs") {
+            stp1 <- colMins(yref/yobs[, dmu], value = TRUE) *
+              colMins(xobs[, dmu]/xref, value = TRUE)
+            bench <- which.max(stp1)
+            eff <- stp1[bench]
+            } else {
+            if (rts == "ndrs") {
+              dominating <- colMins(xratio, value = TRUE) >=
+              1
+              stp1 <- colMins(yref[, dominating,
+              drop = FALSE]/yobs[, dmu], 2, value = TRUE) *
+              colMins(xobs[, dmu]/xref[, dominating,
+                drop = FALSE], value = TRUE)
+              bench <- which(dominating == TRUE)[which.max(stp1)]
+              eff <- stp1[which.max(stp1)]
+            } else {
+              if (rts == "nirs") {
+              stp1 <- colMins(yref/yobs[, dmu],
+                value = TRUE) * colMins(rbind(xobs[,
+                dmu]/xref, 1), value = TRUE)
+              bench <- which.max(stp1)
+              eff <- stp1[bench]
+              }
+            }
+            }
+          }
+          } else {
+          if (orientation == "graph") {
+            if (rts == "vrs") {
+            stp1 <- colMaxs(rbind(xref/xobs[, dmu],
+              yobs[, dmu]/yref), value = TRUE)
+            bench <- which.min(stp1)
+            eff <- stp1[bench]
+            } else {
+            if (rts == "crs") {
+              stp1 <- sqrt(colMaxs(yobs[, dmu]/yref,
+              value = TRUE)/colMins(xobs[, dmu]/xref,
+              value = TRUE))
+              bench <- which.min(stp1)
+              eff <- stp1[bench]
+            } else {
+              if (rts == "nirs") {
+              delta <- colMins(xobs[, dmu]/xref,
+                value = TRUE) * colMaxs(yobs[,
+                dmu]/yref, value = TRUE)
+              stp1 <- ifelse(delta <= 1, sqrt(colMaxs(yobs[,
+                dmu]/yref, value = TRUE)/colMins(xobs[,
+                dmu]/xref, value = TRUE)), colMaxs(rbind(colMaxs(yobs[,
+                dmu]/yref, value = TRUE), 1/(colMins(xobs[,
+                dmu]/xref, value = TRUE))), value = TRUE))
+              bench <- which.min(stp1)
+              eff <- stp1[bench]
+              } else {
+              if (rts == "ndrs") {
+                delta <- colMins(xobs[, dmu]/xref,
+                value = TRUE) * colMaxs(yobs[,
+                dmu]/yref, value = TRUE)
+                stp1 <- ifelse(delta >= 1, sqrt(colMaxs(yobs[,
+                dmu]/yref, value = TRUE)/colMins(xobs[,
+                dmu]/xref, value = TRUE)), colMaxs(rbind(colMaxs(yobs[,
+                dmu]/yref, value = TRUE), 1/(colMins(xobs[,
+                dmu]/xref, value = TRUE))), value = TRUE))
+                bench <- which.min(stp1)
+                eff <- stp1[bench]
+              }
+              }
+            }
+            }
+          }
+          }
         }
+        p(sprintf("DMU = %g", dmu))
+        c(eff, bench)
       }
-    }
-    p(sprintf("DMU = %g", dmu))
-    c(eff, bench)
-  }
+  }, handlers = progressr::handlers("progress"))
   colnames(res) <- c("Efficiencies", "Benchmarks")
   return(as_tibble(res))
 }

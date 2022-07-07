@@ -118,8 +118,6 @@ dominFun <- function(xobs, yobs, xref = NULL, yref = NULL, rts = "vrs",
   xref <- t(xref)
   yref <- t(yref)
   # loop for scale dominance sets ------
-  handlers(global = TRUE)
-  handlers("progress")
   registerDoFuture()
   if (parallel == TRUE & cores == 1) {
     parallel <- FALSE
@@ -130,31 +128,33 @@ dominFun <- function(xobs, yobs, xref = NULL, yref = NULL, rts = "vrs",
     plan(sequential)
   }
   nobs <- dim(xobs)[2]
-  p <- progressor(along = 1:nobs)
-  res <- foreach(dmu = 1:nobs) %dopar% {
-    xratio <- xobs[, dmu]/xref
-    yratio <- yobs[, dmu]/yref
-    if (rts == "vrs") {
-      dobs <- (1:nobs)[colMaxs(yratio, value = TRUE) <=
-        1 & colMins(xratio, value = TRUE) >= 1]
-    } else {
-      if (rts == "crs") {
+  progressr::with_progress({
+    p <- progressor(along = 1:nobs)
+    res <- foreach(dmu = 1:nobs) %dopar% {
+      xratio <- xobs[, dmu]/xref
+      yratio <- yobs[, dmu]/yref
+      if (rts == "vrs") {
         dobs <- (1:nobs)[colMaxs(yratio, value = TRUE) <=
-          colMins(xratio, value = TRUE)]
+          1 & colMins(xratio, value = TRUE) >= 1]
       } else {
-        if (rts == "ndrs") {
-          dobs <- (1:nobs)[colMins(xratio, value = TRUE) >=
-          1]
-        } else {
-          if (rts == "nirs") {
+        if (rts == "crs") {
           dobs <- (1:nobs)[colMaxs(yratio, value = TRUE) <=
+          colMins(xratio, value = TRUE)]
+        } else {
+          if (rts == "ndrs") {
+          dobs <- (1:nobs)[colMins(xratio, value = TRUE) >=
             1]
+          } else {
+          if (rts == "nirs") {
+            dobs <- (1:nobs)[colMaxs(yratio, value = TRUE) <=
+            1]
+          }
           }
         }
       }
+      p(sprintf("DMU = %g", dmu))
+      dobs
     }
-    p(sprintf("DMU = %g", dmu))
-    dobs
-  }
+  }, handlers = progressr::handlers("progress"))
   return(res)
 }

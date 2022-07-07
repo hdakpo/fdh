@@ -159,8 +159,6 @@ costFun <- function(xobs, yobs, wobs, xref = NULL, yref = NULL,
   xref <- t(xref)
   yref <- t(yref)
   # loop for efficiencies estimation ------
-  handlers(global = TRUE)
-  handlers("progress")
   registerDoFuture()
   if (parallel == TRUE & cores == 1) {
     parallel <- FALSE
@@ -171,43 +169,47 @@ costFun <- function(xobs, yobs, wobs, xref = NULL, yref = NULL,
     plan(sequential)
   }
   nobs <- dim(xobs)[2]
-  p <- progressor(along = 1:nobs)
-  res <- foreach(dmu = 1:nobs, .combine = rbind) %dopar% {
-    # dominating sets ------
-    yratio <- yobs[, dmu]/yref
-    dominatingy <- colMaxs(yratio, value = TRUE) <= 1
-    if (rts == "vrs") {
-      stp1 <- colsums(xref[, dominatingy, drop = FALSE] *
-        wobs[, dmu])
-      bench <- which(dominatingy == TRUE)[which.min(stp1)]
-      costmin <- min(stp1)
-    } else {
-      if (rts == "crs") {
-        stp1 <- colsums(xref * wobs[, dmu]) * colMaxs(yratio,
-          value = TRUE)
-        bench <- which.min(stp1)
-        costmin <- min(stp1)
-      } else {
-        if (rts == "nirs") {
+  progressr::with_progress({
+    p <- progressor(along = 1:nobs)
+    res <- foreach(dmu = 1:nobs, .combine = rbind) %dopar%
+      {
+        # dominating sets ------
+        yratio <- yobs[, dmu]/yref
+        dominatingy <- colMaxs(yratio, value = TRUE) <=
+          1
+        if (rts == "vrs") {
           stp1 <- colsums(xref[, dominatingy, drop = FALSE] *
-          wobs[, dmu]) * colMaxs(yratio[, dominatingy,
-          drop = FALSE])
+          wobs[, dmu])
           bench <- which(dominatingy == TRUE)[which.min(stp1)]
           costmin <- min(stp1)
         } else {
-          if (rts == "ndrs") {
-          stp1 <- colsums(xref * wobs[, dmu]) * colMaxs(rbind(yratio,
-            1))
+          if (rts == "crs") {
+          stp1 <- colsums(xref * wobs[, dmu]) * colMaxs(yratio,
+            value = TRUE)
           bench <- which.min(stp1)
           costmin <- min(stp1)
+          } else {
+          if (rts == "nirs") {
+            stp1 <- colsums(xref[, dominatingy, drop = FALSE] *
+            wobs[, dmu]) * colMaxs(yratio[, dominatingy,
+            drop = FALSE])
+            bench <- which(dominatingy == TRUE)[which.min(stp1)]
+            costmin <- min(stp1)
+          } else {
+            if (rts == "ndrs") {
+            stp1 <- colsums(xref * wobs[, dmu]) *
+              colMaxs(rbind(yratio, 1))
+            bench <- which.min(stp1)
+            costmin <- min(stp1)
+            }
+          }
           }
         }
+        costeff <- costmin/sum(xobs[, dmu] * wobs[, dmu])
+        p(sprintf("DMU = %g", dmu))
+        c(costeff, costmin, bench)
       }
-    }
-    costeff <- costmin/sum(xobs[, dmu] * wobs[, dmu])
-    p(sprintf("DMU = %g", dmu))
-    c(costeff, costmin, bench)
-  }
+  }, handlers = progressr::handlers("progress"))
   colnames(res) <- c("CostEff", "CostMin", "Benchmarks")
   return(as_tibble(res))
 }

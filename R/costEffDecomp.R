@@ -8,6 +8,7 @@
 # Cost efficiency decomposition functions (costEffDecomp)                      #
 #------------------------------------------------------------------------------#
 
+
 #' Cost efficiency decomposition functions for nonconvex technologies
 #'
 #' Given a vector of input prices, \code{costEffDecomp} decomposes the overall
@@ -109,8 +110,6 @@ costEffDecomp <- function(xobs, yobs, wobs, xref = NULL, yref = NULL,
   xref <- t(xref)
   yref <- t(yref)
   # loop for efficiencies estimation ------
-  handlers(global = TRUE)
-  handlers("progress")
   registerDoFuture()
   if (parallel == TRUE & cores == 1) {
     parallel <- FALSE
@@ -121,30 +120,34 @@ costEffDecomp <- function(xobs, yobs, wobs, xref = NULL, yref = NULL,
     plan(sequential)
   }
   nobs <- dim(xobs)[2]
-  p <- progressor(along = 1:nobs)
-  res <- foreach(dmu = 1:nobs, .combine = rbind) %dopar% {
-    # dominating sets ------
-    yratio <- yobs[, dmu]/yref
-    dominatingy <- colMaxs(yratio, value = TRUE) <= 1
-    # overall efficiency (crs) ------
-    stp1 <- colsums(xref * wobs[, dmu]) * colMaxs(yratio,
-      value = TRUE)
-    costmin <- min(stp1)
-    OE <- costmin/sum(xobs[, dmu] * wobs[, dmu])
-    # technical efficiency (vrs) ------
-    stp1 <- colMaxs(xref[, dominatingy, drop = FALSE]/xobs[,
-      dmu], value = TRUE)
-    TE <- stp1[which.min(stp1)]
-    # overall technical efficiency (crs) ------
-    stp1 <- colMaxs(xref/xobs[, dmu], value = TRUE) * colMaxs(yobs[,
-      dmu]/yref, value = TRUE)
-    OTE <- stp1[which.min(stp1)]
-    # scale efficiency ------
-    SCE <- OTE/TE
-    # allocative efficiency ------
-    AE <- OE/OTE
-    p(sprintf("DMU = %g", dmu))
-    c(TE = TE, SCE = SCE, OTE = OTE, AE = AE, OE = OE)
-  }
+  progressr::with_progress({
+    p <- progressor(along = 1:nobs)
+    res <- foreach(dmu = 1:nobs, .combine = rbind) %dopar%
+      {
+        # dominating sets ------
+        yratio <- yobs[, dmu]/yref
+        dominatingy <- colMaxs(yratio, value = TRUE) <=
+          1
+        # overall efficiency (crs) ------
+        stp1 <- colsums(xref * wobs[, dmu]) * colMaxs(yratio,
+          value = TRUE)
+        costmin <- min(stp1)
+        OE <- costmin/sum(xobs[, dmu] * wobs[, dmu])
+        # technical efficiency (vrs) ------
+        stp1 <- colMaxs(xref[, dominatingy, drop = FALSE]/xobs[,
+          dmu], value = TRUE)
+        TE <- stp1[which.min(stp1)]
+        # overall technical efficiency (crs) ------
+        stp1 <- colMaxs(xref/xobs[, dmu], value = TRUE) *
+          colMaxs(yobs[, dmu]/yref, value = TRUE)
+        OTE <- stp1[which.min(stp1)]
+        # scale efficiency ------
+        SCE <- OTE/TE
+        # allocative efficiency ------
+        AE <- OE/OTE
+        p(sprintf("DMU = %g", dmu))
+        c(TE = TE, SCE = SCE, OTE = OTE, AE = AE, OE = OE)
+      }
+  }, handlers = progressr::handlers("progress"))
   return(as_tibble(res))
 }

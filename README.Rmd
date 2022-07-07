@@ -20,6 +20,8 @@ knitr::opts_chunk$set(
 [![](https://img.shields.io/github/languages/code-size/hdakpo/fdh.svg)](https://github.com/hdakpo/fdh)
 [![](https://img.shields.io/badge/devel%20version-0.1.0.900-darkred.svg)](https://github.com/hdakpo/fdh)
 [![R build status](https://github.com/hdakpo/fdh/workflows/R-CMD-check/badge.svg)](https://github.com/hdakpo/fdh/actions)
+<!-- [![CRAN status](https://www.r-pkg.org/badges/version/fdh)](https://CRAN.R-project.org/package=pfdh) -->
+<!-- [![Downloads](https://cranlogs.r-pkg.org/badges/fdh)](https://CRAN.R-project.org/package=fdh) -->
 <!-- badges: end -->
 
 *fdh* provides simple ways, using enumeration algorithms, for estimating 
@@ -117,6 +119,26 @@ devtools::install_github("hdakpo/fdh")
 This subsection provides set of examples introducing some important
 features of *fdh*.
 
-
+```{r example}
+library(fdh)
+data(apple)
+## Input technical efficiency (vrs)
+fdh_in_vrs <- distFun(xobs = as.matrix(apple[, c('K', 'L', 'M')]),
+yobs = as.matrix(apple[, c('Y1Z', 'Y2Z')]), rts = 'vrs', orientation = 'in')
+summary(fdh_in_vrs)
+## Minimum cost and cost efficiency (vrs)
+fdh_cost_vrs <- costFun(xobs = as.matrix(apple[, c('K', 'L', 'M')]),
+yobs = as.matrix(apple[, c('Y1Z', 'Y2Z')]),
+wobs = as.matrix(apple[, c('PK', 'PL', 'PM')]), rts = 'vrs')
+summary(fdh_cost_vrs)
+## Cost efficiency decomposition
+fdh_cost_decomp <- costEffDecomp(xobs = as.matrix(apple[, c('K', 'L', 'M')]),
+yobs = as.matrix(apple[, c('Y1Z', 'Y2Z')]),
+wobs = as.matrix(apple[, c('PK', 'PL', 'PM')]))
+summary(fdh_cost_decomp)
+## Dominance sets under vrs
+dlist <- dominFun(xobs = as.matrix(apple[, c('K', 'L', 'M')]),
+yobs = as.matrix(apple[, c('Y1Z', 'Y2Z')]), rts = 'vrs')
+```
 
 

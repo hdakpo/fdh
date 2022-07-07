@@ -10,6 +10,8 @@
 [![](https://img.shields.io/badge/devel%20version-0.1.0.900-darkred.svg)](https://github.com/hdakpo/fdh)
 [![R build
 status](https://github.com/hdakpo/fdh/workflows/R-CMD-check/badge.svg)](https://github.com/hdakpo/fdh/actions)
+<!-- [![CRAN status](https://www.r-pkg.org/badges/version/fdh)](https://CRAN.R-project.org/package=pfdh) -->
+<!-- [![Downloads](https://cranlogs.r-pkg.org/badges/fdh)](https://CRAN.R-project.org/package=fdh) -->
 <!-- badges: end -->
 
 *fdh* provides simple ways, using enumeration algorithms, for estimating
@@ -110,3 +112,83 @@ devtools::install_github("hdakpo/fdh")
 
 This subsection provides set of examples introducing some important
 features of *fdh*.
+
+``` r
+library(fdh)
+data(apple)
+## Input technical efficiency (vrs)
+fdh_in_vrs <- distFun(xobs = as.matrix(apple[, c('K', 'L', 'M')]),
+yobs = as.matrix(apple[, c('Y1Z', 'Y2Z')]), rts = 'vrs', orientation = 'in')
+#> Le chargement a nécessité le package : foreach
+#> Le chargement a nécessité le package : future
+#> Warning: UNRELIABLE VALUE: One of the foreach() iterations ('doFuture-1')
+#> unexpectedly generated random numbers without declaring so. There is a risk
+#> that those random numbers are not statistically sound and the overall results
+#> might be invalid. To fix this, use '%dorng%' from the 'doRNG' package instead
+#> of '%dopar%'. This ensures that proper, parallel-safe random numbers are
+#> produced via the L'Ecuyer-CMRG method. To disable this check, set option
+#> 'doFuture.rng.onMisuse' to "ignore".
+summary(fdh_in_vrs)
+#>   Efficiencies      Benchmarks   
+#>  Min.   :0.3590   Min.   :  3.0  
+#>  1st Qu.:0.7111   1st Qu.:102.0  
+#>  Median :0.9600   Median :234.0  
+#>  Mean   :0.8474   Mean   :216.2  
+#>  3rd Qu.:1.0000   3rd Qu.:316.0  
+#>  Max.   :1.0000   Max.   :405.0
+## Minimum cost and cost efficiency (vrs)
+fdh_cost_vrs <- costFun(xobs = as.matrix(apple[, c('K', 'L', 'M')]),
+yobs = as.matrix(apple[, c('Y1Z', 'Y2Z')]),
+wobs = as.matrix(apple[, c('PK', 'PL', 'PM')]), rts = 'vrs')
+#> Warning: UNRELIABLE VALUE: One of the foreach() iterations ('doFuture-1')
+#> unexpectedly generated random numbers without declaring so. There is a risk
+#> that those random numbers are not statistically sound and the overall results
+#> might be invalid. To fix this, use '%dorng%' from the 'doRNG' package instead
+#> of '%dopar%'. This ensures that proper, parallel-safe random numbers are
+#> produced via the L'Ecuyer-CMRG method. To disable this check, set option
+#> 'doFuture.rng.onMisuse' to "ignore".
+summary(fdh_cost_vrs)
+#>     CostEff          CostMin           Benchmarks   
+#>  Min.   :0.1337   Min.   :  150113   Min.   :  4.0  
+#>  1st Qu.:0.4359   1st Qu.:  374211   1st Qu.: 98.0  
+#>  Median :0.6024   Median :  589629   Median :206.0  
+#>  Mean   :0.6294   Mean   : 1160906   Mean   :212.8  
+#>  3rd Qu.:0.8551   3rd Qu.: 1040739   3rd Qu.:316.0  
+#>  Max.   :1.0000   Max.   :13448388   Max.   :400.0
+## Cost efficiency decomposition
+fdh_cost_decomp <- costEffDecomp(xobs = as.matrix(apple[, c('K', 'L', 'M')]),
+yobs = as.matrix(apple[, c('Y1Z', 'Y2Z')]),
+wobs = as.matrix(apple[, c('PK', 'PL', 'PM')]))
+#> Warning: UNRELIABLE VALUE: One of the foreach() iterations ('doFuture-1')
+#> unexpectedly generated random numbers without declaring so. There is a risk
+#> that those random numbers are not statistically sound and the overall results
+#> might be invalid. To fix this, use '%dorng%' from the 'doRNG' package instead
+#> of '%dopar%'. This ensures that proper, parallel-safe random numbers are
+#> produced via the L'Ecuyer-CMRG method. To disable this check, set option
+#> 'doFuture.rng.onMisuse' to "ignore".
+summary(fdh_cost_decomp)
+#>        TE              SCE               OTE                AE        
+#>  Min.   :0.3590   Min.   :0.07886   Min.   :0.04859   Min.   :0.2526  
+#>  1st Qu.:0.7111   1st Qu.:0.48262   1st Qu.:0.33893   1st Qu.:0.5296  
+#>  Median :0.9600   Median :0.67437   Median :0.55794   Median :0.6758  
+#>  Mean   :0.8474   Mean   :0.66366   Mean   :0.58205   Mean   :0.6589  
+#>  3rd Qu.:1.0000   3rd Qu.:0.85979   3rd Qu.:0.81492   3rd Qu.:0.7943  
+#>  Max.   :1.0000   Max.   :1.00000   Max.   :1.00000   Max.   :1.0000  
+#>        OE         
+#>  Min.   :0.03933  
+#>  1st Qu.:0.21420  
+#>  Median :0.33897  
+#>  Mean   :0.37842  
+#>  3rd Qu.:0.50897  
+#>  Max.   :1.00000
+## Dominance sets under vrs
+dlist <- dominFun(xobs = as.matrix(apple[, c('K', 'L', 'M')]),
+yobs = as.matrix(apple[, c('Y1Z', 'Y2Z')]), rts = 'vrs')
+#> Warning: UNRELIABLE VALUE: One of the foreach() iterations ('doFuture-1')
+#> unexpectedly generated random numbers without declaring so. There is a risk
+#> that those random numbers are not statistically sound and the overall results
+#> might be invalid. To fix this, use '%dorng%' from the 'doRNG' package instead
+#> of '%dopar%'. This ensures that proper, parallel-safe random numbers are
+#> produced via the L'Ecuyer-CMRG method. To disable this check, set option
+#> 'doFuture.rng.onMisuse' to "ignore".
+```

@@ -60,7 +60,7 @@
 #' @author K Hervé Dakpo, Frederic Ang, and Kristiaan Kerstens
 #'
 #' @importFrom foreach foreach %dopar%
-#' @import progressr
+#' @importFrom progressr progressor handlers with_progress
 #' @importFrom parallelly availableCores
 #' @importFrom doFuture registerDoFuture
 #' @importFrom future plan multisession sequential

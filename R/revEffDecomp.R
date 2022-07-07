@@ -106,8 +106,6 @@ revEffDecomp <- function(xobs, yobs, pobs, xref = NULL, yref = NULL,
   xref <- t(xref)
   yref <- t(yref)
   # loop for efficiencies estimation ------
-  handlers(global = TRUE)
-  handlers("progress")
   registerDoFuture()
   if (parallel == TRUE & cores == 1) {
     parallel <- FALSE
@@ -118,30 +116,34 @@ revEffDecomp <- function(xobs, yobs, pobs, xref = NULL, yref = NULL,
     plan(sequential)
   }
   nobs <- dim(xobs)[2]
-  p <- progressor(along = 1:nobs)
-  res <- foreach(dmu = 1:nobs, .combine = rbind) %dopar% {
-    # dominating sets ------
-    xratio <- xobs[, dmu]/xref
-    dominatingx <- colMins(xratio, value = TRUE) >= 1
-    # overall efficiency (crs) ------
-    stp1 <- colsums(yref * pobs[, dmu]) * colMins(xratio,
-      value = TRUE)
-    revmax <- max(stp1)
-    OE <- sum(yobs[, dmu] * pobs[, dmu])/revmax
-    # technical efficiency (vrs) ------
-    stp1 <- colMins(yref[, dominatingx, drop = FALSE]/yobs[,
-      dmu], value = TRUE)
-    TE <- 1/stp1[which.max(stp1)]
-    # overall technical efficiency (crs) ------
-    stp1 <- colMins(yref/yobs[, dmu], value = TRUE) * colMins(xobs[,
-      dmu]/xref, value = TRUE)
-    OTE <- 1/stp1[which.max(stp1)]
-    # scale efficiency ------
-    SCE <- OTE/TE
-    # allocative efficiency ------
-    AE <- OE/OTE
-    p(sprintf("DMU = %g", dmu))
-    c(TE = TE, SCE = SCE, OTE = OTE, AE = AE, OE = OE)
-  }
+  progressr::with_progress({
+    p <- progressor(along = 1:nobs)
+    res <- foreach(dmu = 1:nobs, .combine = rbind) %dopar%
+      {
+        # dominating sets ------
+        xratio <- xobs[, dmu]/xref
+        dominatingx <- colMins(xratio, value = TRUE) >=
+          1
+        # overall efficiency (crs) ------
+        stp1 <- colsums(yref * pobs[, dmu]) * colMins(xratio,
+          value = TRUE)
+        revmax <- max(stp1)
+        OE <- sum(yobs[, dmu] * pobs[, dmu])/revmax
+        # technical efficiency (vrs) ------
+        stp1 <- colMins(yref[, dominatingx, drop = FALSE]/yobs[,
+          dmu], value = TRUE)
+        TE <- 1/stp1[which.max(stp1)]
+        # overall technical efficiency (crs) ------
+        stp1 <- colMins(yref/yobs[, dmu], value = TRUE) *
+          colMins(xobs[, dmu]/xref, value = TRUE)
+        OTE <- 1/stp1[which.max(stp1)]
+        # scale efficiency ------
+        SCE <- OTE/TE
+        # allocative efficiency ------
+        AE <- OE/OTE
+        p(sprintf("DMU = %g", dmu))
+        c(TE = TE, SCE = SCE, OTE = OTE, AE = AE, OE = OE)
+      }
+  }, handlers = progressr::handlers("progress"))
   return(as_tibble(res))
 }
