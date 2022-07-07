@@ -119,7 +119,7 @@ devtools::install_github("hdakpo/fdh")
 This subsection provides set of examples introducing some important
 features of *fdh*.
 
-```{r example}
+```{r example, eval = FALSE}
 library(fdh)
 data(apple)
 ## Input technical efficiency (vrs)
