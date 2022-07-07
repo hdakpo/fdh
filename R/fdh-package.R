@@ -20,7 +20,7 @@
 #' The \pkg{fdh} package provides simple ways, using enumeration algorithms,
 #' for estimating different efficiency scores (output, input, graph) with the
 #' possibilities of imposing different returns to scale assumptions (constant,
-#' non-decreasing, non-increasing, variable returns to scale).
+#' nondecreasing, nonincreasing, variable returns to scale).
 #' The package also offers the possiblity of estimating the minimum cost as well
 #' as the maximum revenue in addition to their corresponding cost efficiency and
 #' revenue efficiency scores. For large datasets, the \code{parallel} can be
