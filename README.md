@@ -4,6 +4,8 @@
 # fdh: A package for estimating nonconvex frontier models
 
 <!-- badges: start -->
+
+[![CodeFactor](https://www.codefactor.io/repository/github/hdakpo/fdh/badge)](https://www.codefactor.io/repository/github/hdakpo/fdh)
 <!-- badges: end -->
 
 *fdh* provides simple ways, using enumeration algorithms, for estimating
@@ -46,8 +48,9 @@ assumptions:
 
     ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;E_o\left(\mathbf%7Bx%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)=\displaystyle\max_%7B\mathbf%7Bx%7D%5E\circ&space;\geq&space;\mathbf%7Bx%7D_n%7D&space;\left\lbrace\displaystyle\min_%7Bq=1,\cdots,&space;Q%7D&space;\frac%7By_%7Bqn%7D%7D%7By_q%5E\circ%7D\cdot\displaystyle\min_%7Bk=1,\cdots,&space;K%7D\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right\rbrace)
 
--   **Graph Technical Efficiency** For this orientation, let’s first
-    define:
+-   **Graph Technical Efficiency**
+
+For this orientation, let’s first define:
 
 ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;\delta&space;=&space;\left(\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D&space;\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D&space;\cdot&space;\displaystyle\min_%7Bk=1,\cdots,&space;K%7D&space;\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right)%5E%7B1/2%7D)
 

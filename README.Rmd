@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # fdh: A package for estimating nonconvex frontier models
 
 <!-- badges: start -->
+[![CodeFactor](https://www.codefactor.io/repository/github/hdakpo/fdh/badge)](https://www.codefactor.io/repository/github/hdakpo/fdh)
 <!-- badges: end -->
 
 *fdh* provides simple ways, using enumeration algorithms, for estimating 
@@ -57,6 +58,7 @@ assumptions:
   ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;E_o\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\max_{\mathbf{x}^\circ&space;\geq&space;\mathbf{x}_n}&space;\left\lbrace\displaystyle\min_{q=1,\cdots,&space;Q}&space;\frac{y_{qn}}{y_q^\circ}\cdot\displaystyle\min_{k=1,\cdots,&space;K}\frac{x_k^\circ}{x_{kn}}\right\rbrace)
   
 - **Graph Technical Efficiency**
+
 For this orientation, let's first define:
 
 ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;\delta&space;=&space;\left(\displaystyle\max_{q=1,&space;\cdots,&space;Q}&space;\frac{y_q^\circ}{y_{qn}}&space;\cdot&space;\displaystyle\min_{k=1,\cdots,&space;K}&space;\frac{x_k^\circ}{x_{kn}}\right)^{1/2})
