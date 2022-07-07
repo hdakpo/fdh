@@ -64,8 +64,9 @@ Else
 
 -   **Nonicreasing Returns to Scale** (nirs)
 
-If
-![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color%7Bwhite%7D&space;\delta&space;\leq&space;1)
+If <a
+href="https://latex.codecogs.com/svg.image?\inline&amp;space;\large&amp;space;\color%7Bwhite%7D&amp;space;\delta&amp;space;\leq&amp;space;1"
+class="uri">https://latex.codecogs.com/svg.image?\inline&amp;space;\large&amp;space;\color{white}&amp;space;\delta&amp;space;\leq&amp;space;1</a>
 
 ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color%7Bwhite%7D&space;E_%7BGR%7D\left(\mathbf%7Bx%7D%5E\circ,&space;\mathbf%7By%7D%5E\circ\right)&space;=\displaystyle\min_%7Bn=1,&space;\cdots,&space;N%7D&space;\left\lbrace\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D\Big/\displaystyle\min_%7Bk=1,\cdots,&space;K%7D\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right\rbrace%5E%7B1/2%7D)
 

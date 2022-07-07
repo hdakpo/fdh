@@ -27,15 +27,15 @@ assumptions:
 
 ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;E_i\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle&space;\min_{\mathbf{y}^\circ&space;\leq&space;\mathbf{y}_n}&space;\displaystyle&space;\max_{k=1,\cdots,&space;K}&space;\left\lbrace&space;\frac{x_{kn}}{x_k^\circ}&space;\right\rbrace)
 
-  - **Constant Returns to Scale** (crs)
+   - **Constant Returns to Scale** (crs)
   
   ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;E_i&space;\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)&space;=\displaystyle\min_{n=1,&space;\cdots,&space;N}&space;\left\lbrace\displaystyle\max_{k=1,\cdots,&space;K}&space;\frac{x_{kn}}{x_k^\circ}\cdot\displaystyle\max_{q=1,&space;\cdots,&space;Q}\frac{y_q^\circ}{y_{qn}}\right\rbrace)
   
-  - **Nonicreasing Returns to Scale** (nirs)
+   - **Nonicreasing Returns to Scale** (nirs)
   
   ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;E_i\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\min_{\mathbf{y}^\circ&space;\leq&space;\mathbf{y}_n}\left\lbrace\displaystyle\max_{k=1,\cdots,&space;K}\frac{x_{kn}}{x_k^\circ}\cdot\displaystyle\max_{q=1,&space;\cdots,&space;Q}\frac{y_q^\circ}{y_{qn}}\right\rbrace)
   
-  - **Nondecreasing Returns to Scale** (ndrs)
+   - **Nondecreasing Returns to Scale** (ndrs)
   
   ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;E_i\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\min_{n=1,&space;\cdots,&space;N}'&space;\left\lbrace\displaystyle{k=1,\cdots,&space;K}{\max}\frac{x_{kn}}{x_k^\circ}\cdot&space;\max&space;\left\lbrace\displaystyle\max_{q=1,&space;\cdots,&space;Q}\frac{y_q^\circ}{y_{qn}},&space;1\right\rbrace\right\rbrace)
 
@@ -75,7 +75,7 @@ For this orientation, let's first define:
   
   - **Nonicreasing Returns to Scale** (nirs)
   
-  If ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color{white}&space;\delta&space;\leq&space;1)
+  If https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color{white}&space;\delta&space;\leq&space;1
   
   ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color{white}&space;E_{GR}\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)&space;=\displaystyle\min_{n=1,&space;\cdots,&space;N}&space;\left\lbrace\displaystyle\max_{q=1,&space;\cdots,&space;Q}\frac{y_q^\circ}{y_{qn}}\Big/\displaystyle\min_{k=1,\cdots,&space;K}\frac{x_k^\circ}{x_{kn}}\right\rbrace^{1/2})
   
