@@ -15,6 +15,12 @@ as the maximum revenue in addition to their corresponding cost efficiency and
 revenue efficiency scores. For large datasets, the \code{parallel} can be
 used to speed up computations.
 }
+\section{costEffDecomp}{
+ \code{\link{costEffDecomp}} decomposes the overall
+cost efficiency into seceral components (technical efficiency, overall
+technical efficiency, scale efficiency, and allocative efficieny).
+}
+
 \section{costFun}{
  \code{\link{costFun}} returns the minimum cost along with
 cost efficiency under different returns to scale assumptions.
@@ -24,6 +30,17 @@ cost efficiency under different returns to scale assumptions.
  \code{\link{distFun}} estimates the Farrell efficiency
 scores for the output, input and graph orientations under different returns
 to scale assumptions.
+}
+
+\section{dominFun}{
+ \code{\link{dominFun}} returns a list that contains for
+each observation the corresponding scale dominance set.
+}
+
+\section{revEffDecomp}{
+ \code{\link{revEffDecomp}} decomposes the overall
+revenue efficiency into seceral components (technical efficiency, overall
+technical efficiency, scale efficiency, and allocative efficieny).
 }
 
 \section{revFun}{

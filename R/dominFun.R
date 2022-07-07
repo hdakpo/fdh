@@ -46,16 +46,16 @@
 #'
 #' \item{constant returns to scale - \code{'crs'}}{\deqn{\left\{
 #' \left(\mathbf{x}_n, \mathbf{y}_n\right) |
-#' \underset{q=1, \cdots, Q}{\max}\frac{y_q^\circ}{y_{qn}} \leq
-#' \underset{k=1, \cdots, K}{\min}\frac{x_k^\circ}{x_{kn}}\right\}}}
+#' \displaystyle\max_{q=1, \cdots, Q}\frac{y_q^\circ}{y_{qn}} \leq
+#' \displaystyle\min_{k=1, \cdots, K}\frac{x_k^\circ}{x_{kn}}\right\}}}
 #'
 #' \item{nonincreasing returns to scale - \code{'nirs'}}{\deqn{\left\{
 #' \left(\mathbf{x}_n, \mathbf{y}_n\right) |
-#' \underset{q=1, \cdots, Q}{\max}\frac{y_q^\circ}{y_{qn}} \leq 1\right\}}}
+#' \displaystyle\max_{q=1, \cdots, Q}\frac{y_q^\circ}{y_{qn}} \leq 1\right\}}}
 #'
 #' \item{nondecreasing returns to scale - \code{'ndrs'}}{\deqn{\left\{
 #' \left(\mathbf{x}_n, \mathbf{y}_n\right) |
-#' \underset{k=1, \cdots, K}{\min}\frac{x_k^\circ}{x_{kn}} \geq 1\right\}}}
+#' \displaystyle\min_{k=1, \cdots, K}\frac{x_k^\circ}{x_{kn}} \geq 1\right\}}}
 #' }
 #'
 #' @return \code{dominFun} returns a list that contains for each observation in

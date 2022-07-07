@@ -69,23 +69,29 @@ enumeration algorithms to obtain the maximum revenue, and hence the revenue
 efficiency are detailed next.
 
 \itemize{
-\item{variable returns to scale - \code{'vrs'}}{\deqn{R_{max}\left(\mathbf{p}^\circ,
-\mathbf{y}^\circ\right)=\underset{\mathbf{x}^\circ \geq \mathbf{x}_n}{\max}
+\item{variable returns to scale - \code{'vrs'}}{\deqn{R_{max}
+\left(\mathbf{p}^\circ,\mathbf{y}^\circ\right)=
+\displaystyle\max_{\mathbf{x}^\circ \geq \mathbf{x}_n}
 \left\{\mathbf{p}^\circ \mathbf{y}_n\right\}}}
 
-\item{constant returns to scale - \code{'crs'}}{\deqn{R_{max}\left(\mathbf{p}^\circ,
-\mathbf{y}^\circ\right)=\underset{n=1, \cdots, N}{\max}
-\left\{\underset{k=1, \cdots, K}{\min}\left(\frac{x_k^\circ}{x_{kn}}\right) \cdot
-\mathbf{p}^\circ \mathbf{y}_n\right\}}}
+\item{constant returns to scale - \code{'crs'}}{\deqn{R_{max}
+\left(\mathbf{p}^\circ,\mathbf{y}^\circ\right)=
+\displaystyle\max_{n=1, \cdots, N} \left\{\displaystyle\min_{k=1, \cdots, K}
+\left(\frac{x_k^\circ}{x_{kn}}\right) \cdot
+ \mathbf{p}^\circ \mathbf{y}_n\right\}}}
 
-\item{nonincreasing returns to scale - \code{'nirs'}}{\deqn{R_{max}\left(\mathbf{p}^\circ,
-\mathbf{y}^\circ\right)=\underset{n=1, \cdots, N}{\max}
-\left\{\min \left\{\underset{k=1, \cdots, K}{\min}\left(\frac{x_k^\circ}{x_{kn}}\right), 1\right\}
+\item{nonincreasing returns to scale - \code{'nirs'}}{\deqn{R_{max}
+\left(\mathbf{p}^\circ, \mathbf{y}^\circ\right)=
+\displaystyle\max_{n=1, \cdots, N} \left\{\min \left\{
+\displaystyle\min_{k=1, \cdots, K}\left(
+\frac{x_k^\circ}{x_{kn}}\right), 1\right\}
 \cdot \mathbf{p}^\circ \mathbf{y}_n\right\}}}
 
-\item{nondecreasing returns to scale - \code{'ndrs'}}{\deqn{R_{max}\left(\mathbf{p}^\circ,
-\mathbf{y}^\circ\right)=\underset{\mathbf{x}^\circ \geq \mathbf{x}_n}{\max}
-\left\{\underset{k=1, \cdots, K}{\min}\left(\frac{x_k^\circ}{x_{kn}}\right) \cdot
+\item{nondecreasing returns to scale - \code{'ndrs'}}{\deqn{R_{max}
+\left(\mathbf{p}^\circ, \mathbf{y}^\circ\right)=
+\displaystyle\max_{\mathbf{x}^\circ \geq \mathbf{x}_n}
+\left\{\displaystyle\min_{k=1, \cdots, K}\left(
+\frac{x_k^\circ}{x_{kn}}\right) \cdot
 \mathbf{p}^\circ \mathbf{y}_n\right\}}}
 }
 

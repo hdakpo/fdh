@@ -69,23 +69,28 @@ provided (\eqn{\mathbf{w}}). Therefore, the enumeration algorithms to obtain
 the minimum cost, and hence the cost efficiency are detailed next.
 
 \itemize{
-\item{variable returns to scale - \code{'vrs'}}{\deqn{C_{min}\left(\mathbf{w}^\circ,
-\mathbf{y}^\circ\right)=\underset{\mathbf{y}^\circ \leq \mathbf{y}_n}{\min}
+\item{variable returns to scale - \code{'vrs'}}{\deqn{C_{min}
+\left(\mathbf{w}^\circ, \mathbf{y}^\circ\right)=
+\displaystyle\min_{\mathbf{y}^\circ \leq \mathbf{y}_n}
 \left\{\mathbf{w}^\circ \mathbf{x}_n\right\}}}
 
-\item{constant returns to scale - \code{'crs'}}{\deqn{C_{min}\left(\mathbf{w}^\circ,
-\mathbf{y}^\circ\right)=\underset{n=1, \cdots, N}{\min}
-\left\{\underset{q=1, \cdots, Q}{\max}\left(\frac{y_q^\circ}{y_{qn}}\right) \cdot
-\mathbf{w}^\circ \mathbf{x}_n\right\}}}
+\item{constant returns to scale - \code{'crs'}}{\deqn{C_{min}
+\left(\mathbf{w}^\circ, \mathbf{y}^\circ\right)=
+\displaystyle\min_{n=1, \cdots, N} \left\{\displaystyle\max_{q=1, \cdots, Q}
+\left(\frac{y_q^\circ}{y_{qn}}\right) \cdot
+ \mathbf{w}^\circ \mathbf{x}_n\right\}}}
 
-\item{nonincreasing returns to scale - \code{'nirs'}}{\deqn{C_{min}\left(\mathbf{w}^\circ,
-\mathbf{y}^\circ\right)=\underset{\mathbf{y}^\circ \leq \mathbf{y}_n}{\min}
-\left\{\underset{q=1, \cdots, Q}{\max}\left(\frac{y_q^\circ}{y_{qn}}\right) \cdot
-\mathbf{w}^\circ \mathbf{x}_n\right\}}}
+\item{nonincreasing returns to scale - \code{'nirs'}}{\deqn{C_{min}
+\left(\mathbf{w}^\circ, \mathbf{y}^\circ\right)=
+\displaystyle\min_{\mathbf{y}^\circ \leq \mathbf{y}_n}
+\left\{\displaystyle\max_{q=1, \cdots, Q}\left(
+\frac{y_q^\circ}{y_{qn}}\right) \cdot \mathbf{w}^\circ \mathbf{x}_n\right\}}}
 
-\item{nondecreasing returns to scale - \code{'ndrs'}}{\deqn{C_{min}\left(\mathbf{w}^\circ,
-\mathbf{y}^\circ\right)=\underset{n=1, \cdots, N}{\min}
-\left\{\max \left\{\underset{q=1, \cdots, Q}{\max}\left(\frac{y_q^\circ}{y_{qn}}\right), 1\right\}
+\item{nondecreasing returns to scale - \code{'ndrs'}}{\deqn{C_{min}
+\left(\mathbf{w}^\circ, \mathbf{y}^\circ\right)=
+\displaystyle\min_{n=1, \cdots, N} \left\{\max \left\{
+\displaystyle\max_{q=1, \cdots, Q}\left(
+\frac{y_q^\circ}{y_{qn}}\right), 1\right\}
 \cdot \mathbf{w}^\circ \mathbf{x}_n\right\}}}
 }
 

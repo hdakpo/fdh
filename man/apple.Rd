@@ -23,7 +23,7 @@ A data frame with 405 observations on the following 10 variables:
 \url{http://qed.econ.queensu.ca/jae/1996-v11.6/ivaldi-ladoux-ossard-simioni/}
 }
 \description{
-This data set from the R\'eseau d'Information Comptable Agricole (RICA), and
+This data set from the Réseau d'Information Comptable Agricole (RICA), and
  Institut National de la Recherche Agronomique (INRA) contains agriculture's
  input and output quantities for 184 French apple producers between 1984 and
  1986. Input prices are also provided.

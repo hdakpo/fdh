@@ -1,6 +1,6 @@
 Package: fdh
 Type: Package
-Title: Benchmarking using Nonconvex Free Disposal Hull Models
+Title: Benchmarking Using Nonconvex Free Disposal Hull Models
 Version: 0.1.0.900
 Authors@R: 
     c(
@@ -32,3 +32,7 @@ Imports:
     progressr,
     Rfast
 URL: https://github.com/hdakpo/fdh
+Maintainer: K Hervé Dakpo <herve.dakpo@inrae.fr>
+Author: K Hervé Dakpo [aut, cre],
+  Frederic Ang [aut],
+  Kristiaan Kerstens [aut]

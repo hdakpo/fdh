@@ -23,10 +23,12 @@ distFun(
 \eqn{N} the number of DMUs under evaluation.}
 
 \item{xref}{(optional). a  \eqn{K \times N_r} matrix on inputs of DMUs
-serving as benchmark (or use to define the technology). Default to \code{'xobs'}.}
+serving as benchmark (or use to define the technology). Default to
+\code{'xobs'}.}
 
 \item{yref}{(optional). a  \eqn{Q \times N_r} matrix on outputs of DMUs
-serving as benchmark (or use to define the technology). Default to \code{'yobs'}.}
+serving as benchmark (or use to define the technology). Default to
+\code{'yobs'}.}
 
 \item{rts}{Character string specifying the returns to scale assumption.
 The default value is \code{'vrs'} (variable returns to scale). Other possible
@@ -69,91 +71,107 @@ efficiency scores are detailed next.
 For the \strong{input orientation} we have the following:
 
 \itemize{
-\item{variable returns to scale - \code{'vrs'}}{\deqn{E_i\left(\mathbf{x}^\circ,
-\mathbf{y}^\circ\right)=\underset{\mathbf{y}^\circ \leq \mathbf{y}_n}{\min}
-\underset{k=1,\cdots, K}{\max}\left\{\frac{x_{kn}}{x_k^\circ}\right\}}}
+\item{variable returns to scale - \code{'vrs'}}{\deqn{E_i
+\left(\mathbf{x}^\circ, \mathbf{y}^\circ\right)=\displaystyle
+\min_{\mathbf{y}^\circ \leq \mathbf{y}_n} \displaystyle \max_{k=1,\cdots, K}
+\left\{\frac{x_{kn}}{x_k^\circ}\right\}}}
 
-\item{constant returns to scale - \code{'crs'}}{\deqn{E_i\left(\mathbf{x}^\circ,
-\mathbf{y}^\circ\right) = \underset{n=1, \cdots, N}{\min}
-\left\{\underset{k=1,\cdots, K}{\max}\frac{x_{kn}}{x_k^\circ}\cdot\underset{q=1,
-\cdots, Q}{\max}\frac{y_q^\circ}{y_{qn}}\right\}}}
+\item{constant returns to scale - \code{'crs'}}{\deqn{E_i
+\left(\mathbf{x}^\circ, \mathbf{y}^\circ\right) =
+\displaystyle\min_{n=1, \cdots, N} \left\{\displaystyle\max_{k=1,\cdots, K}
+\frac{x_{kn}}{x_k^\circ}\cdot\displaystyle\max_{q=1, \cdots, Q}
+\frac{y_q^\circ}{y_{qn}}\right\}}}
 
-\item{nonincreasing returns to scale - \code{'nirs'}}{\deqn{E_i\left(\mathbf{x}^\circ,
-\mathbf{y}^\circ\right)=\underset{\mathbf{y}^\circ \leq \mathbf{y}_n}{\min}
-\left\{\underset{k=1,\cdots, K}{\max}\frac{x_{kn}}{x_k^\circ}\cdot\underset{q=1,
-\cdots, Q}{\max}\frac{y_q^\circ}{y_{qn}}\right\}}}
+\item{nonincreasing returns to scale - \code{'nirs'}}{\deqn{E_i
+\left(\mathbf{x}^\circ, \mathbf{y}^\circ\right)=
+\displaystyle\min_{\mathbf{y}^\circ \leq \mathbf{y}_n}
+\left\{\displaystyle\max_{k=1,\cdots, K}
+\frac{x_{kn}}{x_k^\circ}\cdot\displaystyle\max_{q=1, \cdots, Q}
+\frac{y_q^\circ}{y_{qn}}\right\}}}
 
-\item{nondecreasing returns to scale - \code{'ndrs'}}{\deqn{E_i\left(\mathbf{x}^\circ,
-\mathbf{y}^\circ\right)=\underset{n=1, \cdots, N}{\min}
-\left\{\underset{k=1,\cdots, K}{\max}\frac{x_{kn}}{x_k^\circ}\cdot \max \left\{\underset{q=1,
-\cdots, Q}{\max}\frac{y_q^\circ}{y_{qn}}, 1\right\}\right\}}}
+\item{nondecreasing returns to scale - \code{'ndrs'}}{\deqn{E_i
+\left(\mathbf{x}^\circ, \mathbf{y}^\circ\right)=
+\displaystyle\min_{n=1, \cdots, N}' \left\{\displaystyle{k=1,\cdots, K}{\max}
+\frac{x_{kn}}{x_k^\circ}\cdot \max \left\{\displaystyle\max_{q=1, \cdots, Q}
+\frac{y_q^\circ}{y_{qn}}, 1\right\}\right\}}}
 }
 
 In the case of the \strong{output orientation}, we have:
 
 \itemize{
-\item{variable returns to scale - \code{'vrs'}}{\deqn{E_o\left(\mathbf{x}^\circ,
-\mathbf{y}^\circ\right)=\underset{\mathbf{x}^\circ \geq \mathbf{x}_n}{\max}
-\underset{q=1,\cdots, Q}{\min}\left\{\frac{y_{qn}}{y_q^\circ}\right\}}}
+\item{variable returns to scale - \code{'vrs'}}{\deqn{E_o
+\left(\mathbf{x}^\circ, \mathbf{y}^\circ\right)=
+\displaystyle\max_{\mathbf{x}^\circ \geq \mathbf{x}_n}
+\displaystyle\min_{q=1,\cdots, Q}\left\{\frac{y_{qn}}{y_q^\circ}\right\}}}
 
-\item{constant returns to scale - \code{'crs'}}{\deqn{E_o\left(\mathbf{x}^\circ,
-\mathbf{y}^\circ\right) = \underset{n=1, \cdots, N}{\max}
-\left\{\underset{q=1,\cdots, Q}{\min}\frac{y_{qn}}{y_q^\circ}\cdot\underset{k=1,
-\cdots, K}{\min}\frac{x_k^\circ}{x_{kn}}\right\}}}
+\item{constant returns to scale - \code{'crs'}}{\deqn{E_o
+\left(\mathbf{x}^\circ, \mathbf{y}^\circ\right) =
+\displaystyle\max_{n=1, \cdots, N} \left\{\displaystyle\min_{q=1,\cdots, Q}
+\frac{y_{qn}}{y_q^\circ}\cdot\displaystyle\min_{k=1,
+\cdots, K}\frac{x_k^\circ}{x_{kn}}\right\}}}
 
-\item{nonincreasing returns to scale - \code{'nirs'}}{\deqn{E_o\left(\mathbf{x}^\circ,
-\mathbf{y}^\circ\right)=\underset{n=1, \cdots, N}{\max}
-\left\{\underset{q=1,\cdots, Q}{\min}\frac{y_{qn}}{y_q^\circ}\cdot \min \left\{\underset{k=1,
-\cdots, K}{\min}\frac{x_k^\circ}{x_{kn}}, 1\right\}\right\}}}
+\item{nonincreasing returns to scale - \code{'nirs'}}{\deqn{E_o
+\left(\mathbf{x}^\circ, \mathbf{y}^\circ\right)=
+\displaystyle\max_{n=1, \cdots, N} \left\{\displaystyle\min_{q=1,\cdots, Q}
+\frac{y_{qn}}{y_q^\circ}\cdot \min \left\{\displaystyle\min_{k=1,
+\cdots, K}\frac{x_k^\circ}{x_{kn}}, 1\right\}\right\}}}
 
-\item{nondecreasing returns to scale - \code{'ndrs'}}{\deqn{E_o\left(\mathbf{x}^\circ,
-\mathbf{y}^\circ\right)=\underset{\mathbf{x}^\circ \geq \mathbf{x}_n}{\max}
-\left\{\underset{q=1,\cdots, Q}{\min}\frac{y_{qn}}{y_q^\circ}\cdot\underset{k=1,
-\cdots, K}{\min}\frac{x_k^\circ}{x_{kn}}\right\}}}
+\item{nondecreasing returns to scale - \code{'ndrs'}}{\deqn{E_o
+\left(\mathbf{x}^\circ, \mathbf{y}^\circ\right)=
+\displaystyle\max_{\mathbf{x}^\circ \geq \mathbf{x}_n}
+ \left\{\displaystyle\min_{q=1,\cdots, Q}
+ \frac{y_{qn}}{y_q^\circ}\cdot\displaystyle\min_{k=1,
+\cdots, K}\frac{x_k^\circ}{x_{kn}}\right\}}}
 }
-
 
 Finally, for the \strong{graph orientation}, let's first define:
 
-\deqn{\delta = \left(\underset{q=1, \cdots, Q}{\max}
-\frac{y_q^\circ}{y_{qn}} \cdot \underset{k=1,\cdots, K}{\min}\frac{x_k^\circ}{x_{kn}}\right)^{1/2}}
+\deqn{\delta = \left(\displaystyle\max_{q=1, \cdots, Q}
+\frac{y_q^\circ}{y_{qn}} \cdot \displaystyle\min_{k=1,\cdots, K}
+\frac{x_k^\circ}{x_{kn}}\right)^{1/2}}
 
 The enumeration algorithms summarize as follows:
 
 \itemize{
-\item{variable returns to scale - \code{'vrs'}}{\deqn{E_{GR}\left(\mathbf{x}^\circ,
-\mathbf{y}^\circ\right)=\underset{n=1, \cdots, N}{\min} \left\{\max
-\left(\underset{k=1,\cdots, K}{\max}\frac{x_{kn}}{x_k^\circ},
-\underset{q=1,\cdots, Q}{\max}\frac{y_q^\circ}{y_{qn}}\right)\right\}}}
+\item{variable returns to scale - \code{'vrs'}}{\deqn{E_{GR}
+\left(\mathbf{x}^\circ, \mathbf{y}^\circ\right)=
+\displaystyle\min_{n=1, \cdots, N} \left\{\max
+\left(\displaystyle\max_{k=1,\cdots, K}\frac{x_{kn}}{x_k^\circ},
+\displaystyle\max_{q=1,\cdots, Q}\frac{y_q^\circ}{y_{qn}}\right)\right\}}}
 
-\item{constant returns to scale - \code{'crs'}}{\deqn{E_{GR}\left(\mathbf{x}^\circ,
-\mathbf{y}^\circ\right) = \underset{n=1, \cdots, N}{\min}
-\left\{\underset{q=1,
-\cdots, Q}{\max}\frac{y_q^\circ}{y_{qn}}\Big/\underset{k=1,\cdots, K}{\min}\frac{x_k^\circ}{x_{kn}}\right\}^{1/2}}}
+\item{constant returns to scale - \code{'crs'}}{\deqn{E_{GR}
+\left(\mathbf{x}^\circ, \mathbf{y}^\circ\right) =
+\displaystyle\min_{n=1, \cdots, N} \left\{\displaystyle\max_{q=1, \cdots, Q}
+\frac{y_q^\circ}{y_{qn}}\Big/\displaystyle\min_{k=1,\cdots, K}
+\frac{x_k^\circ}{x_{kn}}\right\}^{1/2}}}
 
 \item{nonincreasing returns to scale - \code{'nirs'}}{ \cr
 -If \eqn{\delta \leq 1} then
 \deqn{E_{GR}\left(\mathbf{x}^\circ,
-\mathbf{y}^\circ\right) = \underset{n=1, \cdots, N}{\min}
-\left\{\underset{q=1,
-\cdots, Q}{\max}\frac{y_q^\circ}{y_{qn}}\Big/\underset{k=1,\cdots, K}{\min}\frac{x_k^\circ}{x_{kn}}\right\}^{1/2}}
+\mathbf{y}^\circ\right) = \displaystyle\min_{n=1, \cdots, N}
+\left\{\displaystyle\max_{q=1,\cdots, Q}\frac{y_q^\circ}{y_{qn}}\Big/
+\displaystyle\min_{k=1,\cdots, K}\frac{x_k^\circ}{x_{kn}}\right\}^{1/2}}
 -Else
 \deqn{E_{GR}\left(\mathbf{x}^\circ,
-\mathbf{y}^\circ\right) = \underset{n=1, \cdots, N}{\min}\left\{\max\left[\underset{q=1, \cdots, Q}{\max}
-\frac{y_q^\circ}{y_{qn}}, \left(\underset{k=1,\cdots, K}{\min}\frac{x_k^\circ}{x_{kn}}\right)^{-1} \right]\right\}}
+\mathbf{y}^\circ\right) = \displaystyle\min_{n=1, \cdots, N}
+\left\{\max\left[\displaystyle\max_{q=1, \cdots, Q}
+\frac{y_q^\circ}{y_{qn}}, \left(\displaystyle\min_{k=1,\cdots, K}
+\frac{x_k^\circ}{x_{kn}}\right)^{-1} \right]\right\}}
 }
 
 \item{nondecreasing returns to scale - \code{'ndrs'}}{ \cr
 -If \eqn{\delta \geq 1} then
 \deqn{E_{GR}\left(\mathbf{x}^\circ,
-\mathbf{y}^\circ\right) = \underset{n=1, \cdots, N}{\min}
-\left\{\underset{q=1,
-\cdots, Q}{\max}\frac{y_q^\circ}{y_{qn}}\Big/\underset{k=1,\cdots, K}{\min}\frac{x_k^\circ}{x_{kn}}\right\}^{1/2}}
+\mathbf{y}^\circ\right) = \displaystyle\min_{n=1, \cdots, N}
+\left\{\displaystyle\max_{q=1, \cdots, Q}\frac{y_q^\circ}{y_{qn}}\Big/
+\displaystyle\min_{k=1,\cdots, K}\frac{x_k^\circ}{x_{kn}}\right\}^{1/2}}
 -Else
 \deqn{E_{GR}\left(\mathbf{x}^\circ,
-\mathbf{y}^\circ\right) = \underset{n=1, \cdots, N}{\min}\left\{\max\left[\underset{q=1, \cdots, Q}{\max}
-\frac{y_q^\circ}{y_{qn}}, \left(\underset{k=1,\cdots, K}{\min}\frac{x_k^\circ}{x_{kn}}\right)^{-1} \right]\right\}}
-}}
+\mathbf{y}^\circ\right) = \displaystyle\min_{n=1, \cdots, N}
+\left\{\max\left[\displaystyle\max_{q=1, \cdots, Q}
+\frac{y_q^\circ}{y_{qn}}, \left(\displaystyle\min_{k=1,\cdots, K}
+\frac{x_k^\circ}{x_{kn}}\right)^{-1} \right]\right\}}}
+}
 }
 \examples{
 # Input orientation - variable returns to scale

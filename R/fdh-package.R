@@ -9,6 +9,9 @@
 # Models: - Farrell distance functions                                         #
 #         - Cost Minimization                                                  #
 #         - Revenue Maximization                                               #
+#         - Cost efficiency decomposition                                      #
+#         - Revenue efficiency decomposition                                   #
+#         - Scale dominance set                                                #
 # Data: Cross sectional data & Pooled data                                     #
 #------------------------------------------------------------------------------#
 
@@ -23,12 +26,23 @@
 #' revenue efficiency scores. For large datasets, the \code{parallel} can be
 #' used to speed up computations.
 #'
+#' @section costEffDecomp: \code{\link{costEffDecomp}} decomposes the overall
+#' cost efficiency into seceral components (technical efficiency, overall
+#' technical efficiency, scale efficiency, and allocative efficieny).
+#'
 #' @section costFun: \code{\link{costFun}} returns the minimum cost along with
 #' cost efficiency under different returns to scale assumptions.
 #'
 #' @section distFun: \code{\link{distFun}} estimates the Farrell efficiency
 #' scores for the output, input and graph orientations under different returns
 #' to scale assumptions.
+#'
+#' @section dominFun: \code{\link{dominFun}} returns a list that contains for
+#' each observation the corresponding scale dominance set.
+#'
+#' @section revEffDecomp: \code{\link{revEffDecomp}} decomposes the overall
+#' revenue efficiency into seceral components (technical efficiency, overall
+#' technical efficiency, scale efficiency, and allocative efficieny).
 #'
 #' @section revFun: \code{\link{revFun}} returns the maximum revenue along with
 #' the corresponding revenue efficiency under different returns to scale
