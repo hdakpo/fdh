@@ -140,7 +140,7 @@ observation:
 
     ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;\left\lbrace&space;\left(\mathbf%7Bx%7D_n,&space;\mathbf%7By%7D_n\right)&space;%7C&space;\mathbf%7Bx%7D&space;\geq&space;\mathbf%7Bx%7D_n,&space;\mathbf%7By%7D&space;\leq&space;\mathbf%7Bx%7D_n\right\rbrace)
 
--   \*Constant Returns to Scale\*\* (crs)
+-   **Constant Returns to Scale** (crs)
 
     ![equation](https://latex.codecogs.com/svg.image?\large&space;\color%7Bwhite%7D&space;\left\lbrace&space;\left(\mathbf%7Bx%7D_n,&space;\mathbf%7By%7D_n\right)&space;%7C&space;\displaystyle\max_%7Bq=1,&space;\cdots,&space;Q%7D\frac%7By_q%5E\circ%7D%7By_%7Bqn%7D%7D&space;\leq&space;\displaystyle\min_%7Bk=1,&space;\cdots,&space;K%7D\frac%7Bx_k%5E\circ%7D%7Bx_%7Bkn%7D%7D\right\rbrace)
 

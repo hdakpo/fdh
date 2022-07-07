@@ -143,7 +143,7 @@ Finally, different scaled dominance sets can be obtained for each observation:
   
   ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;\left\lbrace&space;\left(\mathbf{x}_n,&space;\mathbf{y}_n\right)&space;|&space;\mathbf{x}&space;\geq&space;\mathbf{x}_n,&space;\mathbf{y}&space;\leq&space;\mathbf{x}_n\right\rbrace)
   
-- *Constant Returns to Scale** (crs)
+- **Constant Returns to Scale** (crs)
   
   ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;\left\lbrace&space;\left(\mathbf{x}_n,&space;\mathbf{y}_n\right)&space;|&space;\displaystyle\max_{q=1,&space;\cdots,&space;Q}\frac{y_q^\circ}{y_{qn}}&space;\leq&space;\displaystyle\min_{k=1,&space;\cdots,&space;K}\frac{x_k^\circ}{x_{kn}}\right\rbrace)
   
