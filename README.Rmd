@@ -27,15 +27,71 @@ assumptions:
 
 ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;E_i\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle&space;\min_{\mathbf{y}^\circ&space;\leq&space;\mathbf{y}_n}&space;\displaystyle&space;\max_{k=1,\cdots,&space;K}&space;\left\lbrace&space;\frac{x_{kn}}{x_k^\circ}&space;\right\rbrace)
 
-- **Output Technical Efficiency**
-- **Graph Technical Efficiency**
+  - **Constant Returns to Scale** (crs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;E_i&space;\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)&space;=\displaystyle\min_{n=1,&space;\cdots,&space;N}&space;\left\{\displaystyle\max_{k=1,\cdots,&space;K}&space;\frac{x_{kn}}{x_k^\circ}\cdot\displaystyle\max_{q=1,&space;\cdots,&space;Q}\frac{y_q^\circ}{y_{qn}}\right\})
+  
+  - **Nonicreasing Returns to Scale** (nirs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;E_i\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\min_{\mathbf{y}^\circ&space;\leq&space;\mathbf{y}_n}\left\{\displaystyle\max_{k=1,\cdots,&space;K}\frac{x_{kn}}{x_k^\circ}\cdot\displaystyle\max_{q=1,&space;\cdots,&space;Q}\frac{y_q^\circ}{y_{qn}}\right\})
+  
+  - **Nondecreasing Returns to Scale** (ndrs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;E_i\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\min_{n=1,&space;\cdots,&space;N}'&space;\left\{\displaystyle{k=1,\cdots,&space;K}{\max}\frac{x_{kn}}{x_k^\circ}\cdot&space;\max&space;\left\{\displaystyle\max_{q=1,&space;\cdots,&space;Q}\frac{y_q^\circ}{y_{qn}},&space;1\right\}\right\})
 
-Efficiency scores are obtained by imposing different returns to scale 
-assumptions:
-- **Constant Returns to Scale** (crs)
-- **Nondecreasing Returns to Scale** (ndrs)
-- **Nonicreasing Returns to Scale** (nirs)
-- **Variable Returns to Scale** (vrs)
+- **Output Technical Efficiency**
+  - **Variable Returns to Scale** (vrs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;E_o\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\max_{\mathbf{x}^\circ&space;\geq&space;\mathbf{x}_n}\displaystyle\min_{q=1,\cdots,&space;Q}\left\{\frac{y_{qn}}{y_q^\circ}\right\})
+  
+  - **Constant Returns to Scale** (crs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;E_o\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)&space;=\displaystyle\max_{n=1,&space;\cdots,&space;N}&space;\left\{\displaystyle\min_{q=1,\cdots,&space;Q}\frac{y_{qn}}{y_q^\circ}\cdot\displaystyle\min_{k=1,\cdots,&space;K}\frac{x_k^\circ}{x_{kn}}\right\})
+  
+  - **Nonicreasing Returns to Scale** (nirs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;E_o\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\max_{n=1,&space;\cdots,&space;N}&space;\left\{\displaystyle\min_{q=1,\cdots,&space;Q}\frac{y_{qn}}{y_q^\circ}\cdot&space;\min&space;\left\{\displaystyle\min_{k=1,\cdots,&space;K}\frac{x_k^\circ}{x_{kn}},&space;1\right\}\right\})
+  
+  - **Nondecreasing Returns to Scale** (ndrs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;E_o\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\max_{\mathbf{x}^\circ&space;\geq&space;\mathbf{x}_n}&space;\left\{\displaystyle\min_{q=1,\cdots,&space;Q}&space;\frac{y_{qn}}{y_q^\circ}\cdot\displaystyle\min_{k=1,\cdots,&space;K}\frac{x_k^\circ}{x_{kn}}\right\})
+  
+- **Graph Technical Efficiency**
+For this orientation, let's first define:
+
+![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;\delta&space;=&space;\left(\displaystyle\max_{q=1,&space;\cdots,&space;Q}&space;\frac{y_q^\circ}{y_{qn}}&space;\cdot&space;\displaystyle\min_{k=1,\cdots,&space;K}&space;\frac{x_k^\circ}{x_{kn}}\right)^{1/2})
+
+  - **Variable Returns to Scale** (vrs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\large&space;\color{white}&space;E_{GR}\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)=\displaystyle\min_{n=1,&space;\cdots,&space;N}&space;\left\{\max\left(\displaystyle\max_{k=1,\cdots,&space;K}\frac{x_{kn}}{x_k^\circ},\displaystyle\max_{q=1,\cdots,&space;Q}\frac{y_q^\circ}{y_{qn}}\right)\right\})
+  
+  - **Constant Returns to Scale** (crs)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color{white}&space;E_{GR}\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)&space;=\displaystyle\min_{n=1,&space;\cdots,&space;N}&space;\left\{\displaystyle\max_{q=1,&space;\cdots,&space;Q}\frac{y_q^\circ}{y_{qn}}\Big/\displaystyle\min_{k=1,\cdots,&space;K}\frac{x_k^\circ}{x_{kn}}\right\}^{1/2})
+  
+  Else
+  
+  ![equation]()
+  
+  - **Nonicreasing Returns to Scale** (nirs)
+  
+  If ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color{white}&space;\delta&space;\leq&space;1)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color{white}&space;E_{GR}\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)&space;=\displaystyle\min_{n=1,&space;\cdots,&space;N}&space;\left\{\displaystyle\max_{q=1,&space;\cdots,&space;Q}\frac{y_q^\circ}{y_{qn}}\Big/\displaystyle\min_{k=1,\cdots,&space;K}\frac{x_k^\circ}{x_{kn}}\right\}^{1/2})
+  
+  Else
+  
+  ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color{white}&space;E_{GR}\left(\mathbf{x}^\circ,\mathbf{y}^\circ\right)&space;=&space;\displaystyle\min_{n=1,&space;\cdots,&space;N}\left\{\max\left[\displaystyle\max_{q=1,&space;\cdots,&space;Q}\frac{y_q^\circ}{y_{qn}},&space;\left(\displaystyle\min_{k=1,\cdots,&space;K}\frac{x_k^\circ}{x_{kn}}\right)^{-1}&space;\right]\right\})
+  
+  - **Nondecreasing Returns to Scale** (ndrs)
+  
+  If ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color{white}&space;\delta&space;\geq&space;1)
+  
+  ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color{white}&space;E_{GR}\left(\mathbf{x}^\circ,&space;\mathbf{y}^\circ\right)&space;=\displaystyle\min_{n=1,&space;\cdots,&space;N}&space;\left\{\displaystyle\max_{q=1,&space;\cdots,&space;Q}\frac{y_q^\circ}{y_{qn}}\Big/\displaystyle\min_{k=1,\cdots,&space;K}\frac{x_k^\circ}{x_{kn}}\right\}^{1/2})
+  
+  Else
+  
+  ![equation](https://latex.codecogs.com/svg.image?\inline&space;\large&space;\color{white}&space;E_{GR}\left(\mathbf{x}^\circ,\mathbf{y}^\circ\right)&space;=&space;\displaystyle\min_{n=1,&space;\cdots,&space;N}\left\{\max\left[\displaystyle\max_{q=1,&space;\cdots,&space;Q}\frac{y_q^\circ}{y_{qn}},&space;\left(\displaystyle\min_{k=1,\cdots,&space;K}\frac{x_k^\circ}{x_{kn}}\right)^{-1}&space;\right]\right\})
 
 *fdh* also offers the possiblity of estimating the minimum cost as well as the 
 maximum revenue in addition to their corresponding cost efficiency and revenue 
