@@ -13,7 +13,13 @@ assumptions:
 -   **Input Technical Efficiency**
     -   **Variable Returns to Scale** (vrs)
 
-<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
+<!-- $$e^{i \pi} = -1$$ -->
+
+<div align="center">
+
+<img style="background: white;" src="https://render.githubusercontent.com/render/math?math=">
+
+</div>
 
 -   **Output Technical Efficiency**
 -   **Graph Technical Efficiency**
